@@ -1,3 +1,4 @@
+import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
@@ -16,9 +17,8 @@ export const routes: Routes = [
     { path: 'routine', component: RoutineComponent }
   ];
 
-@NgModule({
+  @NgModule({
     imports: [RouterModule.forRoot(routes)],
     exports: [RouterModule]
-})
-
-export class AppRoutingModule { }
+  })
+  export class AppRoutingModule { }

@@ -1,1 +1,38 @@
-
+<!-- Barra de navegación -->
+<nav class="navbar">
+    <div class="logo">
+      <h1>Orday</h1>
+    </div>
+    <div class="auth-buttons">
+      <button class="back-btn" (click) = "goHome()">Atrás</button>
+    </div>
+</nav>
+  
+<!-- Contenido del Login -->
+<div class="container">
+    <header>
+      <h1>Inicia sesión en tu cuenta</h1>
+      <p>Por favor, ingresa tus datos para poder acceder a tu cuenta de Orday.</p>
+    </header>
+  
+    <form class="login-form"  (ngSubmit)="onSubmit()">
+      
+        <!-- Correo -->
+        <div class="form-group">
+            <input type="email" formControlName="email" placeholder="Correo electrónico" [class.invalid]="email.invalid && email.touched"/>
+            <small class="error-message" *ngIf="email.invalid && email.touched"> Correo inválido o vacío</small>
+        </div>
+    
+        <!-- Contraseña -->
+        <div class="form-group password-group">
+            <input [type]="showPassword ? 'text' : 'password'" formControlName="password" placeholder="Contraseña"[class.invalid]="password.invalid && password.touched"/>
+            <span class="toggle-password" (click)="togglePassword()">{{ showPassword ? '🙈' : '👁️' }}</span>
+            <small class="error-message" *ngIf="password.invalid && password.touched">La contraseña es requerida</small>
+        </div>
+    
+        <button type="submit" class="login-btn" [disabled]="loginForm.invalid">Iniciar Sesión</button>
+    
+        <p>¿No tienes cuenta? <button class="signup-btn" (click) = "goRegister()">Regístrate</button></p>
+    </form>
+</div>
+  

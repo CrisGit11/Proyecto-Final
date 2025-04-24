@@ -1,12 +1,53 @@
 import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators} from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
+  imports: [],
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrl: './login.component.css' 
 })
+
 export class LoginComponent {
-  email: string = '';
-  password: string = '';
+
+  loginForm: FormGroup;
+  showPassword: boolean = false;
+
+  constructor(private fb: FormBuilder, private router: Router) {
+    this.loginForm = this.fb.group({
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', Validators.required],
+    });
+  }
+
+  get email() {
+    return this.loginForm.get('email')!;
+  }
+
+  get password() {
+    return this.loginForm.get('password')!;
+  }
+
+  togglePassword(): void {
+    this.showPassword = !this.showPassword;
+  }
+
+  onSubmit(): void {
+    if (this.loginForm.valid) {
+      const { email, password } = this.loginForm.value;
+      console.log('Login:', email, password);
+      // Aquí iría la lógica real de login
+    }
+  }
+
+  goHome() {
+    this.router.navigate(['/']);
+  }
+
+  goRegister() {
+    this.router.navigate(['/register']);
+  }
+
+
 }
