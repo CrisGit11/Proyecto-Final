@@ -1,48 +1,36 @@
-import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators} from '@angular/forms';
+import { Component, inject } from '@angular/core';
+import { FormsModule} from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css' 
 })
 
 export class LoginComponent {
 
-  loginForm: FormGroup;
-  showPassword: boolean = false;
+  email: string = '';
+  password: string = '';
 
-  constructor(private fb: FormBuilder, private router: Router) {
-    this.loginForm = this.fb.group({
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', Validators.required],
-    });
-  }
-
-  get email() {
-    return this.loginForm.get('email')!;
-  }
-
-  get password() {
-    return this.loginForm.get('password')!;
-  }
-
-  togglePassword(): void {
-    this.showPassword = !this.showPassword;
-  }
-
-  onSubmit(): void {
-    if (this.loginForm.valid) {
-      const { email, password } = this.loginForm.value;
-      console.log('Login:', email, password);
-    }
-  }
+  constructor(private router: Router) {}
 
   public goTo(ruta: string): void {
     this.router.navigate([ruta]);
   }
+
+  login(): void{
+    if(this.email !== '' && this.password !== ''){
+      //sessionStorage.setItem('token', 'dlskhfdsfndsflkj5412');
+      this.router.navigate(['/profile']);
+    }else{
+      //Mostrar mensaje de email o contraseña incorrectos
+    }
+  }
+
+  
+  
 
 
 }
