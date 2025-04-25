@@ -37,16 +37,11 @@ export class LoginComponent {
     if (this.loginForm.valid) {
       const { email, password } = this.loginForm.value;
       console.log('Login:', email, password);
-      // Aquí iría la lógica real de login
     }
   }
 
-  goHome() {
-    this.router.navigate(['/']);
-  }
-
-  goRegister() {
-    this.router.navigate(['/register']);
+  public goTo(ruta: string): void {
+    this.router.navigate([ruta]);
   }
 
 

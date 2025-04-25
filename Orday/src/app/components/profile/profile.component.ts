@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { Router } from 'express';
 
 @Component({
   selector: 'app-profile',
@@ -8,4 +9,5 @@ import { Component } from '@angular/core';
 })
 export class ProfileComponent {
 
+  
 }

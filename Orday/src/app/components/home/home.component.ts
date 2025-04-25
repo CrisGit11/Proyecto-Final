@@ -11,13 +11,8 @@ export class HomeComponent {
 
   constructor(private router: Router) {}
 
-  goLogin() {
-    this.router.navigate(['/login']);
+  public goTo(ruta: string): void {
+    this.router.navigate([ruta]);
   }
-
-  goRegister() {
-    this.router.navigate(['/register']);
-  }
-
 }
 

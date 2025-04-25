@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -56,10 +56,7 @@ export class RegisterComponent {
   }
 
   // Redirigir a la página principal si el botón "Atrás" es presionado
-  goHome() {
-    this.router.navigate(['/']);
-  }
-  goLogin() {
-    this.router.navigate(['/login']);
+  public goTo(ruta: string): void {
+    this.router.navigate([ruta]);
   }
 }

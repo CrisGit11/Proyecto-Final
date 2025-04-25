@@ -4,7 +4,7 @@
       <h1>Orday</h1>
     </div>
     <div class="auth-buttons">
-      <button class="back-btn" (click) = "goHome()">Atrás</button>
+      <button class="back-btn" (click) = "goTo('')">Home</button>
     </div>
 </nav>
   
@@ -32,7 +32,7 @@
     
         <button type="submit" class="login-btn" [disabled]="loginForm.invalid">Iniciar Sesión</button>
     
-        <p>¿No tienes cuenta? <button class="signup-btn" (click) = "goRegister()">Regístrate</button></p>
+        <p>¿No tienes cuenta? <button class="signup-btn" (click) = "goTo('login')">Regístrate</button></p>
     </form>
 </div>
   
