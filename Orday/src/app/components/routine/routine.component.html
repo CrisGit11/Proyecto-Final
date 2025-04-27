@@ -1,1 +1,66 @@
-
+<!-- Barra de navegación -->
+<nav class="navbar">
+    <div class="logo">
+        <h1>Orday</h1>
+    </div>
+    <ul class="nav-links">
+        <li><a [routerLink]="['/dashboard']">Inicio</a></li>
+        <li><a [routerLink]="['/routine']">Planificador</a></li>
+        <li><a>Calendario</a></li>
+        <li><a [routerLink]="['/profile']">Perfil</a></li>
+      </ul>
+    <div class="auth-buttons">
+        <button class="back-btn" (click)="goTo('')">Cerrar sesión</button>
+    </div>
+</nav>
+<!-- Contenido principal de Crear Rutina -->
+<div class="create-routine">
+    <header>
+      <h2>Crear una nueva rutina</h2>
+      <p>Completa el siguiente formulario para crear tu rutina personalizada.</p>
+    </header>
+  
+    <form class="routine-form">
+      <!-- Nombre de la rutina -->
+      <div class="form-group">
+        <label for="routine-name">Nombre de la rutina</label>
+        <input type="text" id="routine-name" name="routine-name" placeholder="Nombre de la rutina" required />
+      </div>
+  
+      <!-- Descripción de la rutina -->
+      <div class="form-group">
+        <label for="routine-description">Descripción</label>
+        <textarea id="routine-description" name="routine-description" placeholder="Descripción de la rutina" required></textarea>
+      </div>
+  
+      <!-- Categoría -->
+      <div class="form-group">
+        <label for="routine-category">Categoría</label>
+        <select id="routine-category" name="routine-category" required>
+          <option value="cardio">Cardio</option>
+          <option value="fuerza">Fuerza</option>
+          <option value="flexibilidad">Flexibilidad</option>
+          <option value="resistencia">Resistencia</option>
+        </select>
+      </div>
+  
+      <!-- Ejercicios -->
+      <div class="exercise-list">
+        <h3>Ejercicios</h3>
+        <div class="exercise-item">
+          <input type="text" placeholder="Ejercicio 1" name="exercise1" required />
+        </div>
+        <div class="exercise-item">
+          <input type="text" placeholder="Ejercicio 2" name="exercise2" required />
+        </div>
+        <div class="exercise-item">
+          <input type="text" placeholder="Ejercicio 3" name="exercise3" required />
+        </div>
+      </div>
+  
+      <!-- Botón para guardar la rutina -->
+      <div class="form-group submit-btn-container">
+        <button type="submit" class="submit-btn">Crear Rutina</button>
+      </div>
+    </form>
+  </div>

@@ -1,0 +1,187 @@
+/* Estilos generales para el Registro */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f2f2f2;
+  margin: 0;
+  padding: 0;
+}
+
+/* Barra de navegación */
+.navbar {
+  background-color: #2c3e50; 
+  padding: 1rem 3rem;
+  border-radius: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  position: sticky;
+  top: 0;
+}
+
+.navbar h1:hover{
+  color: #7f8c8d; 
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+/* Estilo de los enlaces de navegación */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+  
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+  
+.nav-links a:hover {
+  color: #83b7c1;  
+  transform: scale(1.05); 
+}
+
+.auth-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.auth-buttons .back-btn {
+  background-color: #83b7c1;  
+  border: none;
+  padding: 0.8rem 1.5rem;
+  color: white;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+  
+.auth-buttons .back-btn:hover {
+  background-color: #7f8c8d;  
+  transform: scale(1.05);  
+}
+
+/* Contenido del Dashboard */
+.dashboard {
+  margin-top: 2rem;
+  padding: 2rem;
+  justify-content: center;
+}
+
+.dashboard img{
+  width: 200px;
+}
+  
+.dashboard header {
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.dashboard header h2 {
+  font-size: 2.5rem;
+  color: #34495e;
+}
+
+.dashboard header p {
+  font-size: 1.2rem;
+  color: #777777;
+}
+
+.dashboard-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 2rem;
+}
+
+.create-routine-btn {
+  background-color: #83b7c1;
+  color: white;
+  padding: 0.8rem 2rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.create-routine-btn:hover {
+  background-color: #557278;
+}
+
+/* Sección de resumen de rutinas */
+.routines-summary {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px #80a0a6;
+}
+
+.routines-summary h3 {
+  font-size: 2rem;
+  color: #34495e;
+  margin-bottom: 1rem;
+}
+
+.routines-description {
+  font-size: 1.1rem;
+  color: #777777;
+  margin-bottom: 2rem;
+}
+
+.routine-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.routine-item {
+  background-color: #dbe7ea;
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+.routine-name {
+  font-size: 1.5rem;
+  color: #34495e;
+  margin-bottom: 0.5rem;
+}
+
+.routine-details {
+  font-size: 1.1rem;
+  color: #777777;
+  margin-bottom: 1rem;
+}
+
+.routine-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.edit-btn, .delete-btn {
+  background-color: #42a845;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.edit-btn:hover, .delete-btn:hover {
+  background-color: #277744;
+}
+
+.delete-btn {
+  background-color: #ff4d4d;
+}
+
+.delete-btn:hover {
+  background-color: #e60000;
+}
+

@@ -7,11 +7,11 @@
       <li><a href="#">Inicio</a></li>
       <li><a href="#">Planificador</a></li>
       <li><a href="#">Calendario</a></li>
-      <li><a href="#">Contacto</a></li>
+      <li><a href="#">Perfil</a></li>
     </ul>
     <div class="auth-buttons">
-      <button class="login-btn" (click)="goTo('login')">Iniciar sesión</button>
-      <button class="signup-btn" (click)="goTo('register')">Registrarse</button>
+      <button class="login-btn" (click)="goTo('/login')">Iniciar sesión</button>
+      <button class="signup-btn" (click)="goTo('/register')">Registrarse</button>
     </div>
 </nav>
   <!-- Contenido principal -->
@@ -42,13 +42,26 @@
         <p>Crea y sigue hábitos que mejoren tu productividad y bienestar general. Logra tus objetivos con facilidad.</p>
       </div>
     </section>
+
+     <!-- Sección de Testimonios -->
+     <section class="testimonials">
+      <h2>Lo que dicen nuestros usuarios</h2>
+      <div class="testimonial">
+        <p>"Orday ha transformado la manera en que gestiono mi tiempo. Ahora puedo ver todo de manera clara y organizada. ¡Una herramienta imprescindible!"</p>
+        <p><strong>- Laura, Profesional independiente</strong></p>
+      </div>
+      <div class="testimonial">
+        <p>"Gracias a Orday, pude organizar mis tareas diarias y mejorar mi productividad. ¡Recomiendo esta plataforma a todos!"</p>
+        <p><strong>- Miguel, Estudiante universitario</strong></p>
+      </div>
+    </section>
   
     <section class="cta">
       <h2>Comienza ahora y organiza tu semana con estilo</h2>
       <p>Únete a Orday para empezar a organizar tu semana de manera eficiente y sin estrés.</p>
       <div class="cta-buttons">
-        <button class="login-btn" (click)="goTo('login')">Iniciar sesión</button>
-        <button class="signup-btn" (click)="goTo('register')">Registrarse</button>
+        <button class="login-btn" (click)="goTo('/login')">Iniciar sesión</button>
+        <button class="signup-btn" (click)="goTo('/register')">Registrarse</button>
       </div>
     </section>
 </div>

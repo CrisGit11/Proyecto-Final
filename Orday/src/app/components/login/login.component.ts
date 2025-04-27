@@ -1,17 +1,17 @@
 import { Component, inject } from '@angular/core';
 import { FormsModule} from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-login',
-  imports: [FormsModule],
+  imports: [FormsModule, RouterLink, RouterOutlet],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css' 
 })
 
 export class LoginComponent {
 
-  email: string = '';
+  name: string = '';
   password: string = '';
 
   constructor(private router: Router) {}
@@ -21,11 +21,12 @@ export class LoginComponent {
   }
 
   login(): void{
-    if(this.email !== '' && this.password !== ''){
+    if(this.name !== '' && this.password !== ''){
       //sessionStorage.setItem('token', 'dlskhfdsfndsflkj5412');
-      this.router.navigate(['/profile']);
+      sessionStorage.setItem('name', this.name);
+      this.router.navigate(['/dashboard']);
     }else{
-      //Mostrar mensaje de email o contraseña incorrectos
+      alert('El correo y la contraseña son obligatorios para iniciar sesión');
     }
   }
 

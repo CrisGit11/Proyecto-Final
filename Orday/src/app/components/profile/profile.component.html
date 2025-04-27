@@ -1,1 +1,55 @@
-<p>soy el perfil</p>
+<!-- Barra de navegación -->
+<nav class="navbar">
+    <div class="logo">
+        <h1>Orday</h1>
+    </div>
+    <ul class="nav-links">
+        <li><a [routerLink]="['/dashboard']">Inicio</a></li>
+        <li><a [routerLink]="['/routine']">Planificador</a></li>
+        <li><a>Calendario</a></li>
+      </ul>
+    <div class="auth-buttons">
+        <button class="back-btn" (click)="goTo('')">Cerrar sesión</button>
+    </div>
+</nav>
+
+<!-- Contenido principal del perfil -->
+<div class="profile-page">
+    <div class="profile-header">
+        <h2>Bienvenid&#64;, <span class="user-name">{{name}}</span></h2>
+        <p class="profile-description">Aquí puedes ver y editar tu información personal.</p>
+    </div>
+  
+    <div class="profile-card">
+
+        <div class="profile-image-container">
+            <img src="assets\imagenes\fotoPerfil.webp" alt="Foto de perfil" class="profile-image">
+            <button class="edit-photo-btn">Cambiar foto</button>
+        </div>
+  
+        <div class="profile-info">
+            <div class="info-item">
+                <strong>Email:</strong>
+                <p class="user-email">correo&#64;gmail.com</p>
+            </div>
+            <div class="info-item">
+                <strong>Nombre completo:</strong>
+                <p class="user-fullname">Nombre del Usuario</p>
+            </div>
+            <div class="info-item">
+                <strong>Fecha de registro:</strong>
+                <p class="user-registration-date">12 de Marzo, 2023</p>
+            </div>
+
+            <div class="info-item">
+                <strong>Rutinas creadas:</strong>
+                <p class="user-status">3</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="profile-actions">
+        <button class="edit-btn">Editar perfil</button>
+        <button class="change-password-btn">Cambiar contraseña</button>
+    </div>
+</div>

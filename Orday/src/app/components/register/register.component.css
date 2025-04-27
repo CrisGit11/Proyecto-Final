@@ -46,6 +46,7 @@ body {
     transform: scale(1.05);  
 }
 
+/*Contenido principal*/
 .container {
     margin: 3rem auto;
     padding: 3rem;
@@ -56,15 +57,7 @@ body {
     background-color: #ffffff; 
 }
 
-.container .login-btn {
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    text-decoration: underline;
-    color: #80a0a6;
-}
-.container .login-btn:hover {
-    transform: scale(1.1);
+.container .login-a:hover {
     color:red;
 }
 
@@ -90,30 +83,13 @@ input {
     padding: 0.8rem;
     font-size: 1rem;
     margin-bottom: 0.5rem;
-    border: 1px solid #ccc;
+    border: 1px solid #cccccc;
     border-radius: 5px;
     box-sizing: border-box;
 }
 
-input.invalid {
-    border-color: red;
-}
-
-.error-message {
-    color: red;
-    font-size: 0.8rem;
-}
-
 .password-group {
     position: relative;
-}
-
-.toggle-password {
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    cursor: pointer;
 }
 
 .register-btn {
@@ -128,25 +104,7 @@ input.invalid {
     transition: background-color 0.3s ease;
 }
 
-.register-btn:disabled {
-    background-color: #bdc3c7;
-    cursor: not-allowed;
-}
-
 .register-btn:hover {
     background-color: #7f8c8d;
 }
 
-p {
-    margin-top: 1rem;
-    font-size: 1rem;
-}
-
-a {
-    color: #83b7c1;
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}

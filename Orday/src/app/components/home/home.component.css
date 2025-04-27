@@ -31,12 +31,13 @@ body {
     transform: scale(1.1);
     cursor: pointer;
 }
+
 /* Estilo de los enlaces de navegación */
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 2rem;
-  }
+    gap: 2.5rem;
+}
   
 .nav-links a {
     text-decoration: none;
@@ -118,7 +119,6 @@ header p {
   
 .feature img {
     max-width: 80%;
-    height: auto;
     border-radius: 8px;
     margin-bottom: 1rem;
 }
@@ -132,6 +132,47 @@ header p {
 .feature p {
     font-size: 1rem;
     color: #7f8c8d;
+}
+
+/* Estilos para la sección de testimonios */
+.testimonials {
+    background-color: #ead3b053;
+    padding: 50px 5px;
+    text-align: center;
+    border-radius: 8px;
+    margin-top: 25px;
+}
+  
+.testimonials h2 {
+    font-size: 2rem;
+    color: #34495e;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+  
+.testimonial {
+    background-color: #34495eee;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px auto;
+    width: 80%;
+    max-width: 600px;
+    transition: transform 0.3s ease-in-out;
+}
+  
+.testimonial p {
+    font-size: 1.1rem;
+    color: white;
+    margin-bottom: 10px;
+}
+  
+.testimonial strong {
+    font-size: 1.2rem;
+    color: #ffbd59;
+}
+  
+.testimonial:hover {
+    transform: translateY(-10px);
 }
   
 /* Sección de llamada a la acción (CTA) */
@@ -161,8 +202,9 @@ header p {
     background-color: #34495e;
     border: none;
     padding: 1rem 2rem;
+    margin-top: 15px;
     color: white;
-    font-size: 1.1rem;
+    font-size: 1rem;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
@@ -172,26 +214,90 @@ header p {
     background-color: #586f89;
     transform: scale(1.05);
 }
+
   
-/* Responsive */
-@media (max-width: 768px) {
-    .features {
-      flex-direction: column;
-      align-items: center;
+/* Estilos Responsive */
+@media screen and (max-width: 768px) {
+    /* Barra de navegación */
+    .navbar {
+        padding: 0rem 1rem;
     }
-    
+
+    .navbar .navbar-content {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 1.5rem;
+        margin-top: 1rem;
+        font-size: 12px;
+    }
+
+    .auth-buttons {
+        margin-top: 1rem;
+        flex-direction: column;
+    }
+
     .feature {
-      width: 80%;
-      margin-bottom: 2rem;
+        width: 100%;
+        margin-bottom: 1.5rem;
     }
-    
+
+    .features {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
     .cta-buttons {
-      flex-direction: column;
-    }
-    
-    .cta-buttons button {
-      width: 100%;
-      margin-bottom: 1rem;
+        flex-direction: column;
+        gap: 1.5rem;
     }
 }
-  
+
+@media screen and (max-width: 480px) {
+    /* Barra de navegación */
+    .navbar {
+        padding: 0rem 1rem;
+    }
+
+    .logo img {
+        width: 80px;
+        height: 80px;
+    }
+
+    /* Contenido principal */
+    .container {
+        padding: 2rem;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    header p {
+        font-size: 1rem;
+    }
+
+    .highlight {
+        font-size: 1rem;
+    }
+
+    .feature h3 {
+        font-size: 1.2rem;
+    }
+
+    .feature p {
+        font-size: 0.9rem;
+    }
+
+    .cta h2 {
+        font-size: 1.5rem;
+    }
+
+    .cta p {
+        font-size: 1rem;
+    }
+}
