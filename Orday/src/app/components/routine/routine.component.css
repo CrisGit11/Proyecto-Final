@@ -1,19 +1,15 @@
-/* Estilos generales */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
+/* Estilos generales para el Registro */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f4f6f8;
+  background-color: #f2f2f2;
+  margin: 0;
+  padding: 0;
 }
 
 /* Barra de navegación */
 .navbar {
-  background-color: #2c3e50;
-  padding: 1.5rem 3rem;
+  background-color: #2c3e50; 
+  padding: 1rem 3rem;
   border-radius: 0.5rem;
   display: flex;
   justify-content: space-between;
@@ -21,30 +17,31 @@ body {
   color: white;
   position: sticky;
   top: 0;
-  z-index: 1000;
 }
 
-.navbar h1:hover {
-  color: #7f8c8d;
+.navbar h1:hover{
+  color: #7f8c8d; 
   transform: scale(1.1);
   cursor: pointer;
 }
 
+/* Estilo de los enlaces de navegación */
 .nav-links {
   list-style: none;
   display: flex;
   gap: 2rem;
 }
-
-.nav-links li a {
-  color: white;
+  
+.nav-links a {
   text-decoration: none;
+  color: white;
   font-weight: 500;
-  transition: color 0.3s ease;
+  font-size: 1.1rem;
 }
-
-.nav-links li a:hover {
-  color: #bdc3c7;
+  
+.nav-links a:hover {
+  color: #83b7c1;  
+  transform: scale(1.05); 
 }
 
 .auth-buttons {

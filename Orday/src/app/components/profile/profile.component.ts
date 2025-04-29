@@ -1,10 +1,10 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { Router, RouterLink, RouterOutlet } from '@angular/router';
+import { Router, RouterLink} from '@angular/router';
 
 @Component({
   selector: 'app-profile',
-  imports: [FormsModule, RouterLink, RouterOutlet],
+  imports: [FormsModule, RouterLink],
   templateUrl: './profile.component.html',
   styleUrl: './profile.component.css'
 })

@@ -1,10 +1,10 @@
 import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { Router, RouterLink, RouterOutlet } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-register',
-  imports: [FormsModule, RouterLink, RouterOutlet],
+  imports: [FormsModule, RouterLink],
   templateUrl: './register.component.html',
   styleUrl: './register.component.css'
 })

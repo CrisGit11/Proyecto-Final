@@ -1,40 +1,40 @@
 <!-- Barra de navegación -->
-<nav class="navbar">
-    <div class="logo">
+<nav class = "navbar">
+    <div class = "logo">
         <h1>Orday</h1>
     </div>
-    <div class="auth-buttons">
-        <button class="back-btn" (click)="goTo('')">Home</button>
+    <div class = "auth-buttons">
+        <button class = "back-btn" (click) = "goTo('')">Home</button>
     </div>
 </nav>
 
 <!-- Contenido del Registro -->
-<div class="container">
+<div class = "container">
     <header>
         <h1>Crea tu cuenta</h1>
         <p>Por favor, completa los siguientes campos para registrarte en Orday.</p>
     </header>
 
-    <form class="register-form" (ngSubmit)="register()">
+    <form class = "register-form" (ngSubmit) = "register()">
         
         <!-- Nombre -->
-        <div class="form-group">
-            <input type="text" placeholder="Nombre Usuario" [(ngModel)]="name" name="name"/>
+        <div class = "form-group">
+            <input type = "text" placeholder = "Nombre Usuario" [(ngModel)] = "name" name = "name"/>
         </div>
 
         <!-- Contraseña -->
-        <div class="form-group password-group">
-            <input type="password" placeholder="Contraseña"  [(ngModel)]="password1" name="password1"/>
+        <div class = "form-group password-group">
+            <input type = "password" placeholder = "Contraseña"  [(ngModel)] = "password1" name = "password1"/>
         </div>
 
         <!-- Confirmar Contraseña -->
-        <div class="form-group password-group">
-            <input type="password" placeholder="Confirmar Contraseña" [(ngModel)]="password2" name="password2"/>
+        <div class = "form-group password-group">
+            <input type = "password" placeholder = "Confirmar Contraseña" [(ngModel)] = "password2" name = "password2"/>
         </div>
 
         <!-- Botón de registro -->
-        <button type="submit" class="register-btn" (click)="register()">Registrarse</button>
+        <button type = "submit" class = "register-btn">Registrarse</button>
 
-        <p>¿Ya tienes cuenta? <a class="login-a" [routerLink]="['/login']">Inicia sesión</a></p>
+        <p>¿Ya tienes cuenta? <a class = "login-a" [routerLink] = "['/login']">Inicia sesión</a></p>
     </form>
 </div>

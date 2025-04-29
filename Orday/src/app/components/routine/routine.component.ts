@@ -1,13 +1,19 @@
 import { Component } from '@angular/core';
-import { Router, RouterLink, RouterOutlet } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-routine',
-  imports: [RouterLink, RouterOutlet],
+  imports: [FormsModule, RouterLink],
   templateUrl: './routine.component.html',
   styleUrls: ['./routine.component.css']
 })
 export class RoutineComponent {
+
+  name: string = '';
+  description: string = '';
+  duration: string = '';
+  category: string = '';
 
   constructor(private router: Router) {}
 
@@ -18,6 +24,9 @@ export class RoutineComponent {
     }
   }
 
+  public saveRoutine(): void{
   
+  }
+
   
 }
