@@ -18,15 +18,15 @@
   <form class="login-form" (ngSubmit)="login()">
     <!-- Correo -->
     <div class="form-group">
-      <input type="text" placeholder="Nombre usuario" [(ngModel)]="name" name ="name"/>
+      <input type="text" placeholder="Nombre usuario" [(ngModel)]="name" name ="name" id ="name" required/>
     </div>
   
     <!-- Contraseña -->
     <div class="form-group password-group">
-      <input type="password" placeholder="Contraseña" [(ngModel)]="password" name ="password"/>
+      <input type="password" placeholder="Contraseña" [(ngModel)]="password" name ="password" id ="password" required/>
     </div>
   
-    <button type="submit" class="login-btn" (click) = "login()">Iniciar Sesión</button>
+    <button type="submit" class="login-btn">Iniciar Sesión</button>
   
     <p>¿No tienes cuenta? <a class="signup-a" [routerLink]="['/register']">Regístrate</a></p>
   </form>

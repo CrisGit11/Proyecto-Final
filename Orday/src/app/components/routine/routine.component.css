@@ -1,15 +1,19 @@
-/* Estilos generales para el Registro */
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f2f2f2;
+/* Estilos generales */
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f6f8;
 }
 
 /* Barra de navegación */
 .navbar {
-  background-color: #2c3e50; 
-  padding: 1rem 3rem;
+  background-color: #2c3e50;
+  padding: 1.5rem 3rem;
   border-radius: 0.5rem;
   display: flex;
   justify-content: space-between;
@@ -17,31 +21,30 @@ body {
   color: white;
   position: sticky;
   top: 0;
+  z-index: 1000;
 }
 
-.navbar h1:hover{
-  color: #7f8c8d; 
+.navbar h1:hover {
+  color: #7f8c8d;
   transform: scale(1.1);
   cursor: pointer;
 }
 
-/* Estilo de los enlaces de navegación */
 .nav-links {
   list-style: none;
   display: flex;
   gap: 2rem;
 }
 
-.nav-links a {
-  text-decoration: none;
+.nav-links li a {
   color: white;
+  text-decoration: none;
   font-weight: 500;
-  font-size: 1.1rem;
+  transition: color 0.3s ease;
 }
 
-.nav-links a:hover {
-  color: #83b7c1;  
-  transform: scale(1.05); 
+.nav-links li a:hover {
+  color: #bdc3c7;
 }
 
 .auth-buttons {
@@ -50,7 +53,7 @@ body {
 }
 
 .auth-buttons .back-btn {
-  background-color: #83b7c1;  
+  background-color: #83b7c1;
   border: none;
   padding: 0.8rem 1.5rem;
   color: white;
@@ -61,36 +64,36 @@ body {
 }
 
 .auth-buttons .back-btn:hover {
-  background-color: #7f8c8d;  
-  transform: scale(1.05);  
+  background-color: #7f8c8d;
+  transform: scale(1.05);
 }
 
-/* Contenido principal de Crear Rutina */
+/* Crear rutina */
 .create-routine {
+  margin: 3rem auto;
   padding: 3rem;
-  max-width: 600px;
-  margin: 25px auto;
-  background-color: white;
+  border-radius: 15px;
   box-shadow: 0 10px 20px #80a0a6;
-  border-radius: 8px;
-}
-  
-.create-routine header {
-  text-align: center;
-  margin-bottom: 2rem;
+  max-width: 600px;
+  background-color: #ffffff;
+  text-align: left;
 }
 
 .create-routine header h2 {
-  font-size: 2.5rem;
-  color: #333333;
+  font-size: 2rem;
+  color: #34495e;
+  margin-bottom: 0.5rem;
+  text-align: center;
 }
 
 .create-routine header p {
-  font-size: 1.2rem;
-  color: #777777;
+  font-size: 1.1rem;
+  color: #7f8c8d;
+  margin-bottom: 2rem;
+  text-align: center;
 }
 
-/* Formulario de rutina */
+/* Formulario */
 .routine-form {
   display: flex;
   flex-direction: column;
@@ -98,74 +101,41 @@ body {
 
 .form-group {
   margin-bottom: 1.5rem;
+  width: 100%;
 }
 
-.form-group label {
-  font-size: 1.1rem;
-  color: #333333;
-  display: block;
+.routine-form input, .routine-form textarea, .routine-form select {
+  width: 100%;
+  padding: 0.8rem;
+  font-size: 1rem;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  box-sizing: border-box;
   margin-bottom: 0.5rem;
+  transition: border-color 0.3s ease;
 }
 
-.form-group input, .form-group textarea, .form-group select {
-  width: 100%;
-  padding: 0.8rem;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  font-size: 1rem;
-  color: #333333;
-  background-color: #fafafa;
+.routine-form textarea {
+  resize: vertical;
+  min-height: 100px;
 }
 
-.form-group input:focus, .form-group textarea:focus, .form-group select:focus {
-  outline: none;
-  border-color: black;
-}
-
-textarea {
-  height: 100px;
-}
-
-/* Estilo para la lista de ejercicios */
-.exercise-list {
-  margin-top: 2rem;
-}
-
-.exercise-item {
-  margin-bottom: 1rem;
-}
-
-.exercise-item input {
-  width: 100%;
-  padding: 0.8rem;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  font-size: 1rem;
-  color: #333;
-  background-color: #fafafa;
-}
-
-.exercise-item input:focus {
-  outline: none;
-  border-color: black;
-}
-
-/* Botón de submit */
+/* Botón Guardar Rutina */
 .submit-btn-container {
-  text-align: center;
+  text-align: right;
 }
 
 .submit-btn {
-  background-color: #4A90E2;
+  background-color: #83b7c1;
   color: white;
-  padding: 0.8rem 2rem;
   border: none;
-  border-radius: 8px;
-  font-size: 1.2rem;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s ease;
 }
 
 .submit-btn:hover {
-  background-color: #357ABD;
+  background-color: #7f8c8d;
 }

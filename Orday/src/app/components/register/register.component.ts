@@ -11,7 +11,6 @@ import { Router, RouterLink, RouterOutlet } from '@angular/router';
 export class RegisterComponent {
 
   name: string = '';
-  email: string = '';
   password1: string = '';
   password2: string = '';
 
@@ -22,7 +21,7 @@ export class RegisterComponent {
   }
 
   register(): void {
-    if(this.name === '' || this.email === '' || this.password1 === '' || this.password2 === ''){
+    if(this.name === '' || this.password1 === '' || this.password2 === ''){
       alert('Faltan datos por completar');
     }else if(this.password1 !== this.password2) {
       alert('Las contraseñas no coinciden');
