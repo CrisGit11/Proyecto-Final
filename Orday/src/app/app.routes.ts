@@ -7,15 +7,15 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { RoutineComponent } from './components/routine/routine.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { NgModule } from '@angular/core';
-import { autenticacionGuard } from './guards/autenticacion.guard';
+import { autenticationGuard } from './guards/autentication.guard';
 
 export const routes: Routes = [
     { path: '', component: HomeComponent },
     { path: 'login', component: LoginComponent },
     { path: 'register', component: RegisterComponent },
-    { path: 'dashboard', component: DashboardComponent },
-    { path: 'profile', component: ProfileComponent},
-    { path: 'routine', component: RoutineComponent }
+    { path: 'dashboard', component: DashboardComponent, canActivate: [autenticationGuard]},
+    { path: 'profile', component: ProfileComponent, canActivate: [autenticationGuard]},
+    { path: 'routine', component: RoutineComponent, canActivate: [autenticationGuard] }
   ];
 
   @NgModule({

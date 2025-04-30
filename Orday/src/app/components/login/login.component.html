@@ -1,34 +1,35 @@
 <!-- Barra de navegación -->
-<nav class = "navbar">
-  <div class = "logo">
+<nav class="navbar">
+  <div class="logo">
     <h1>Orday</h1>
   </div>
-  <div class = "auth-buttons">
-    <button class = "back-btn" (click) = "goTo('')">Home</button>
+  <div class="auth-buttons">
+    <button class="back-btn" (click)="goTo('')">Home</button>
   </div>
 </nav>
   
 <!-- Contenido del Login -->
-<div class = "container">
+<div class="container">
   <header>
     <h1>Inicia sesión en tu cuenta</h1>
     <p>Por favor, ingresa tus datos para poder acceder a tu cuenta de Orday.</p>
   </header>
 
-  <form class = "login-form" (ngSubmit) = "login()">
+  <form class="login-form" (ngSubmit)="login()" [formGroup]="form">
     <!-- Correo -->
-    <div class = "form-group">
-      <input type = "text" placeholder = "Nombre usuario" [(ngModel)] = "name" name = "name" id = "name" required/>
+    <div class="form-group">
+      <input type="text" formControlName="name" placeholder="Nombre Usuario" name="name" id="name" />
+      <p *ngIf="form.controls['name'].touched && form.controls['name'].errors?.['required']" class="error-message"> El campo es obligatorio</p>
     </div>
   
     <!-- Contraseña -->
-    <div class = "form-group password-group">
-      <input type = "password" placeholder = "Contraseña" [(ngModel)] = "password" name = "password" id = "password" required/>
+    <div class="form-group password-group">
+      <input type="password" placeholder="Contraseña" name="password" id="password" formControlName="password"/>
+            <p *ngIf="form.controls['password'].touched && form.controls['password'].errors?.['required']" class="error-message"> El campo es obligatorio</p>
     </div>
   
-    <button type = "submit" class = "login-btn">Iniciar Sesión</button>
-  
-    <p>¿No tienes cuenta? <a class = "signup-a" [routerLink] = "['/register']">Regístrate</a></p>
+    <button type="submit" class="login-btn">Iniciar Sesión</button>
+    <p class="register-a">¿No tienes cuenta? <a class="signup-a" [routerLink]="['/register']">Regístrate</a></p>
   </form>
 </div>
   

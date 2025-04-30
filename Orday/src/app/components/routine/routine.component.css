@@ -101,6 +101,15 @@ body {
   width: 100%;
 }
 
+.form-group input.ng-invalid.ng-touched {
+  border: 1px solid red;
+}
+
+.form-group .error-message{
+  color: red;
+  font-size: 0.8rem;
+}
+
 .routine-form input, .routine-form textarea, .routine-form select {
   width: 100%;
   padding: 0.8rem;

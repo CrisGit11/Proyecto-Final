@@ -1,58 +1,47 @@
 <!-- Barra de navegación -->
-<nav class = "navbar">
-    <div class = "logo">
+<nav class="navbar">
+    <div class="logo">
         <h1>Orday</h1>
     </div>
-    <ul class = "nav-links">
-        <li><a [routerLink] = "['/dashboard']">Inicio</a></li>
-        <li><a [routerLink] = "['/routine']">Planificador</a></li>
+    <ul class="nav-links">
+        <li><a [routerLink]="['/dashboard']">Inicio</a></li>
+        <li><a [routerLink]="['/routine']">Planificador</a></li>
         <li><a >Calendario</a></li>
-        <li><a [routerLink] = "['/profile']">Perfil</a></li>
+        <li><a [routerLink]="['/profile']">Perfil</a></li>
       </ul>
-    <div class = "auth-buttons">
-        <button class = "back-btn" (click) = "goOut('')">Cerrar sesión</button>
+    <div class="auth-buttons">
+        <button class="back-btn" (click)="goOut('')">Cerrar sesión</button>
     </div>
 </nav>
 
 <!-- Contenido principal del Dashboard -->
-<div class = "dashboard">
+<div class="dashboard">
     <header>
         <h2>Comienza a Gestionar Tu Semana</h2>
         <p>Tu espacio para gestionar tus rutinas y mantenerte organizado de una forma simple y eficiente. Aquí puedes crear nuevas rutinas, hacer un seguimiento de tu progreso y modificar las existentes cuando lo necesites.</p>
-        <img src = "assets\imagenes\ordayLogo.png" alt = "Logo_Orday.png" />
+        <img src="assets\imagenes\ordayLogo.png" alt="Logo_Orday.png" />
     </header>
   
-    <div class = "dashboard-actions">
-        <button class = "create-routine-btn" (click) = "goTo('/routine')">Crear nueva rutina</button>
+    <div class="dashboard-actions">
+        <button class="create-routine-btn" (click)="goTo('/routine')">Crear nueva rutina</button>
     </div>
   
     <!-- Resumen de rutinas -->
-    <section class = "routines-summary">
+    <section class="routines-summary">
         <h3>Mis Rutinas</h3>
-        <p class  =  "routines-description">Gestiona las rutinas que has creado, edítalas o elimínelas.</p>
+        <p class = "routines-description">Gestiona las rutinas que has creado, edítalas o elimínelas.</p>
     
         <!-- Lista de rutinas -->
-        <div class = "routine-list">
-            <div class = "routine-item">
-                <h4 class = "routine-name">Mañana Productiva</h4>
-                <p class = "routine-details">Realizar todas las tareas de la casa, como hacer la cama, limpiar el salón, etc</p>
-                <p class = "routine-details"><strong>Duración: 1h</strong></p>
-                <p class = "routine-details"><strong>Categoría: Hogar</strong></p>
-                <div class = "routine-actions">
-                    <button class = "edit-btn">Editar</button>
-                    <button class = "delete-btn">Eliminar</button>
-                </div>
-            </div>
-  
-            <div class = "routine-item">
-                <h4 class = "routine-name">Rutina de Fuerza</h4>
-                <p class = "routine-details">Ejercicios para ganar masa muscular.</p>
-                <p class = "routine-details"><strong>Duración: 1h</strong></p>
-                <p class = "routine-details"><strong>Categoría: Deporte</strong></p>
-                <div class = "routine-actions">
-                    <button class = "edit-btn">Editar</button>
-                    <button class = "delete-btn">Eliminar</button>
-                </div>
+        <div class="routine-list">
+            <div class="routine-item" *ngFor="let routine of routines; let i=index">
+                <h4 class="routine-name">{{routine.name}}</h4>
+                <p class="routine-details">{{routine.description}}</p>
+                <p class="routine-details"><strong>Duración: {{routine.duration}}</strong></p>
+                <p class="routine-details"><strong>Categoría: {{routine.category}}</strong></p>
+                <div class="routine-actions">
+                    <button class="edit-btn" (click)="updateRoutine(i)">Editar</button>
+                    <button class="delete-btn" (click)="deleteRoutine(i)">Eliminar</button>
+                </div>   
             </div>
         </div>
     </section>

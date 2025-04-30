@@ -1,40 +1,43 @@
 <!-- Barra de navegación -->
-<nav class = "navbar">
-    <div class = "logo">
+<nav class="navbar">
+    <div class="logo">
         <h1>Orday</h1>
     </div>
-    <div class = "auth-buttons">
-        <button class = "back-btn" (click) = "goTo('')">Home</button>
+    <div class="auth-buttons">
+        <button class="back-btn" (click)="goTo('')">Home</button>
     </div>
 </nav>
 
 <!-- Contenido del Registro -->
-<div class = "container">
+<div class="container">
     <header>
         <h1>Crea tu cuenta</h1>
         <p>Por favor, completa los siguientes campos para registrarte en Orday.</p>
     </header>
 
-    <form class = "register-form" (ngSubmit) = "register()">
+    <form class="register-form" (ngSubmit)="register()" [formGroup]="form">
         
         <!-- Nombre -->
-        <div class = "form-group">
-            <input type = "text" placeholder = "Nombre Usuario" [(ngModel)] = "name" name = "name"/>
+        <div class="form-group">
+            <input type="text" formControlName="name" placeholder="Nombre Usuario" name="name" id="name" />
+            <p *ngIf="form.controls['name'].touched && form.controls['name'].errors?.['required']" class="error-message"> El campo es obligatorio</p>
         </div>
 
         <!-- Contraseña -->
-        <div class = "form-group password-group">
-            <input type = "password" placeholder = "Contraseña"  [(ngModel)] = "password1" name = "password1"/>
+        <div class="form-group password-group">
+            <input type="password" placeholder="Contraseña" name="password1" id="password1" formControlName="password1"/>
+            <p *ngIf="form.controls['password1'].touched && form.controls['password1'].errors?.['required']" class="error-message"> El campo es obligatorio</p>
         </div>
 
         <!-- Confirmar Contraseña -->
-        <div class = "form-group password-group">
-            <input type = "password" placeholder = "Confirmar Contraseña" [(ngModel)] = "password2" name = "password2"/>
+        <div class="form-group password-group">
+            <input type="password" placeholder="Confirmar Contraseña" name="password2" id="password2" formControlName="password2"/>
+            <p *ngIf="form.controls['password2'].touched && form.controls['password2'].errors?.['required']" class="error-message"> El campo es obligatorio</p>
         </div>
 
         <!-- Botón de registro -->
-        <button type = "submit" class = "register-btn">Registrarse</button>
+        <button type="submit" class="register-btn">Registrarse</button>
 
-        <p>¿Ya tienes cuenta? <a class = "login-a" [routerLink] = "['/login']">Inicia sesión</a></p>
+        <p>¿Ya tienes cuenta? <a class="login-a" [routerLink]="['/login']">Inicia sesión</a></p>
     </form>
 </div>
