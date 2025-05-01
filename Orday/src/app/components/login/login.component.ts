@@ -3,6 +3,7 @@ import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 import { AuthTokenService } from '../../services/auth-token/auth-token.service';
+import { User, UserService } from '../../services/register/user.service';
 
 @Component({
   selector: 'app-login',
@@ -18,7 +19,7 @@ export class LoginComponent {
   constructor(private router: Router) {}
 
   public form = new FormGroup({
-    name: new FormControl('', [Validators.required]),
+    nameUser: new FormControl('', [Validators.required]),
     password: new FormControl('', [Validators.required]),
   })
 
@@ -29,7 +30,7 @@ export class LoginComponent {
   public login(): void{
     this.form.markAllAsTouched();
     if(this.form.valid){
-      sessionStorage.setItem('name', String(this.form.controls['name'].value));
+      sessionStorage.setItem('nameUser', String(this.form.controls['nameUser'].value));
       this.authTokenService.setToken('djkfhadfalk1243kndklfhnkaf');
       this.router.navigate(['/dashboard']);
     }

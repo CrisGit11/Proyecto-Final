@@ -17,6 +17,8 @@ Request:
 ``` JSON
 {
   "username": "cristina_orday",
+  "name": "cristina perales",
+  "email": "cristina_orday@gmail.com",
   "password": "Orday2025"
 }
 ```
@@ -29,8 +31,10 @@ Response:
   "message": "El usuario se ha registrado correctamente",
   "data": {
     "username": "cristina_orday",
-    "password": "$2b$10$RRMOjJLGHBw1KAZ3qDRAMe5UGGY3niQazWo462iQpnQNmZ5HxJk7y",
-    "_id": "681108ecf815abe9fdf653d5",
+    "name": "cristina perales",
+    "email": "cristina_orday@gmail.com",
+    "password": "$2b$10$0YgpAmG244.hEOf2Y7/fg.cWI2XpQagE.UX4AsvtMGxjrr9HDrsce",
+    "_id": "68139cabc271259630e7bb89",
     "__v": 0
   }
 }

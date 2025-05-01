@@ -1,15 +1,17 @@
-/* Estilos generales para el Registro */
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f2f2f2;
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
-
+  
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+  
 /* Barra de navegación */
 .navbar {
     background-color: #2c3e50; 
-    padding: 1rem 3rem;
+    padding: 0rem 3rem;
     border-radius: 0.5rem;
     display: flex;
     justify-content: space-between;
@@ -19,18 +21,13 @@ body {
     top: 0;
 }
 
-.navbar h1:hover{
-    color: #7f8c8d; 
-    transform: scale(1.1);
+.navbar img{
+    width: 125px;
     cursor: pointer;
 }
 
-.auth-buttons {
-    display: flex;
-    gap: 1rem;
-}
-
-.auth-buttons .back-btn {
+/* Estilo del boton de home */
+.back-btn {
     background-color: #83b7c1;  
     border: none;
     padding: 0.8rem 1.5rem;
@@ -41,43 +38,51 @@ body {
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
   
-.auth-buttons .back-btn:hover {
-    background-color: #7f8c8d;  
+.back-btn:hover {
+    background-color: #ffbd59;  
     transform: scale(1.05);  
 }
 
-/*Contenido principal*/
+/* Contenido principal */
 .container {
     margin: 3rem auto;
     padding: 3rem;
     border-radius: 15px;
     box-shadow: 0 10px 20px #80a0a6;
     max-width: 400px;
-    text-align: center;
-    background-color: #ffffff; 
+    background-color: #ffffff;   
 }
 
-.container .login-a:hover {
-    color:red;
-}
-
-header h1 {
+.container h1 {
     font-size: 2rem;
     color: #34495e;
     margin-bottom: 1rem;
+    text-align: center;
 }
 
-header p {
+.container p {
     font-size: 1.1rem;
     color: #7f8c8d;
-    margin-bottom: 2rem;
+    margin-top: 20px;
+}
+.container .login-a:hover {
+    color:#ffbd59;
 }
 
+.register-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+}
+  
 .form-group {
     margin-bottom: 1.5rem;
-    text-align: left;
+    width: 100%;
+    max-width: 400px;
+    position: relative;
 }
-
+  
 input {
     width: 100%;
     padding: 0.8rem;
@@ -96,24 +101,19 @@ input {
     color: red;
     font-size: 0.8rem;
 }
-
-.password-group {
-    position: relative;
-}
-
+ 
 .register-btn {
     width: 100%;
-    padding: 1rem;
+    padding: 0.8rem;
     background-color: #83b7c1;
     border: none;
     color: white;
     font-size: 1rem;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease
 }
 
 .register-btn:hover {
     background-color: #7f8c8d;
 }
-

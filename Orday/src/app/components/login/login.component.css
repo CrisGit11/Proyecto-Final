@@ -11,7 +11,7 @@ body {
 /* Barra de navegación */
 .navbar {
     background-color: #2c3e50; 
-    padding: 1.5rem 3rem;
+    padding: 0rem 3rem;
     border-radius: 0.5rem;
     display: flex;
     justify-content: space-between;
@@ -21,18 +21,13 @@ body {
     top: 0;
 }
 
-.navbar h1:hover{
-    color: #7f8c8d; 
-    transform: scale(1.1);
+.navbar img{
+    width: 125px;
     cursor: pointer;
 }
 
-.auth-buttons {
-    display: flex;
-    gap: 1rem;
-}
-
-.auth-buttons .back-btn {
+/* Estilo del boton de home */ 
+.back-btn {
     background-color: #83b7c1;  
     border: none;
     padding: 0.8rem 1.5rem;
@@ -43,8 +38,8 @@ body {
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
   
-.auth-buttons .back-btn:hover {
-    background-color: #7f8c8d;  
+.back-btn:hover {
+    background-color: #ffbd59;  
     transform: scale(1.05);  
 }
 
@@ -71,7 +66,7 @@ body {
 }
 
 .container .signup-a:hover {
-    color:red;
+    color:#ffbd59;
 }
 
 .container .register-a{

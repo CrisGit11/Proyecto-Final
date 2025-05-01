@@ -1,14 +1,15 @@
 <!-- Barra de navegación -->
 <nav class = "navbar">
-    <div class = "logo">
-        <h1>Orday</h1>
+    <div>
+        <img src="assets\imagenes\logoOrday.png" alt="Logo_Orday.png" />
     </div>
-    <ul class = "nav-links">
-        <li><a [routerLink] = "['/dashboard']">Inicio</a></li>
-        <li><a [routerLink] = "['/routine']">Planificador</a></li>
-        <li><a>Calendario</a></li>
-      </ul>
-    <div class = "auth-buttons">
+    <ul class="nav-links">
+        <li><a [routerLink]="['/dashboard']">Inicio</a></li>
+        <li><a [routerLink]="['/routine']">Planificador</a></li>
+        <li><a >Calendario</a></li>
+        <li><a [routerLink]="['/profile']">Perfil</a></li>
+    </ul>
+    <div>
         <button class = "back-btn" (click) = "goTo('')">Cerrar sesión</button>
     </div>
 </nav>
@@ -16,12 +17,11 @@
 <!-- Contenido principal del perfil -->
 <div class = "profile-page">
     <div class = "profile-header">
-        <h2>Bienvenid&#64;, <span class = "user-name">{{name}}</span></h2>
+        <h2>Bienvenid&#64;, <span class = "user-name">{{nameUser}}</span></h2>
         <p class = "profile-description">Aquí puedes ver y editar tu información personal.</p>
     </div>
   
     <div class = "profile-card">
-
         <div class = "profile-image-container">
             <img src = "assets\imagenes\fotoPerfil.webp" alt = "Foto de perfil" class = "profile-image">
             <button class = "edit-photo-btn">Cambiar foto</button>
@@ -30,26 +30,37 @@
         <div class = "profile-info">
             <div class = "info-item">
                 <strong>Email:</strong>
-                <p class = "user-email">correo&#64;gmail.com</p>
+                <p>{{email}}</p>
             </div>
             <div class = "info-item">
                 <strong>Nombre completo:</strong>
-                <p class = "user-fullname">Nombre del Usuario</p>
+                <p>{{name}}</p>
             </div>
             <div class = "info-item">
                 <strong>Fecha de registro:</strong>
-                <p class = "user-registration-date">12 de Marzo, 2023</p>
+                <p>12 de Marzo, 2023</p>
             </div>
 
             <div class = "info-item">
                 <strong>Rutinas creadas:</strong>
-                <p class = "user-status">3</p>
+                <p>3</p>
             </div>
         </div>
     </div>
     
     <div class = "profile-actions">
         <button class = "edit-btn">Editar perfil</button>
-        <button class = "change-password-btn">Cambiar contraseña</button>
+        <button class = "change-password-btn" (click)="showPasswordForm()">Cambiar contraseña</button>
+    </div>
+
+    <!-- Formulario para cambiar la contraseña -->
+    <div *ngIf="isPasswordFormVisible" class="password-form">
+        <h3>Cambiar Contraseña</h3>
+        <form (ngSubmit)="changePassword()">
+        <label for="newPassword">Nueva Contraseña:</label>
+        <input type="password" id="newPassword" [(ngModel)]="newPassword" name="newPassword" placeholder="Introduce tu nueva contraseña" required />
+        <button type="submit">Guardar</button>
+        <button type="button" (click)="cancelChange()">Cancelar</button>
+        </form>
     </div>
 </div>

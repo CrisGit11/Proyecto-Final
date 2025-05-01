@@ -10,6 +10,7 @@ import { Router, RouterLink } from '@angular/router';
   templateUrl: './routine.component.html',
   styleUrls: ['./routine.component.css']
 })
+
 export class RoutineComponent {
 
   private routineService = inject(RoutineService);
@@ -21,14 +22,14 @@ export class RoutineComponent {
     description: new FormControl('', [Validators.required]),
     duration: new FormControl('', [Validators.required]),
     category: new FormControl('', [Validators.required])
-  })
+  });
 
   public goTo(ruta: string): void {
-    let cerrarSesion = confirm('¿Está seguro de que quiere cerrar sesión?')
+    let cerrarSesion = confirm('¿Está seguro de que quiere cerrar sesión?');
     if(cerrarSesion){
       this.router.navigate([ruta]);
-    }
-  }
+    };
+  };
 
   public saveRoutine(): void{
     this.form.markAllAsTouched();
@@ -36,11 +37,19 @@ export class RoutineComponent {
       const newRoutine = this.routineService.generateRoutine(this.form.value.name!, this.form.value.description!, this.form.value.duration!, this.form.value.category!);
       if(newRoutine){
         this.router.navigate(['/dashboard']);
-      }
-      
-    }
-  
-  }
+      };
+    };
+  };
 
-  
-}
+  public cancelRoutine(): void {
+    this.form.markAllAsTouched();
+    const cancelRoutine = confirm('¿Está seguro de que quiere cancelar?');
+    if(cancelRoutine){
+      this.form.controls['name'].setValue('');
+      this.form.controls['description'].setValue('');
+      this.form.controls['duration'].setValue('');
+      this.form.controls['category'].setValue('');
+    };
+  };
+
+};

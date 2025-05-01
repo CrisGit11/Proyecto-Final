@@ -1,9 +1,9 @@
 <!-- Barra de navegación -->
 <nav class="navbar">
-    <div class="logo">
-        <h1>Orday</h1>
+    <div>
+        <img src="assets\imagenes\logoOrday.png" alt="Logo_Orday.png" />
     </div>
-    <div class="auth-buttons">
+    <div>
         <button class="back-btn" (click)="goTo('')">Home</button>
     </div>
 </nav>
@@ -17,10 +17,22 @@
 
     <form class="register-form" (ngSubmit)="register()" [formGroup]="form">
         
-        <!-- Nombre -->
+        <!-- Nombre Usuario -->
         <div class="form-group">
-            <input type="text" formControlName="name" placeholder="Nombre Usuario" name="name" id="name" />
+            <input type="text" formControlName="nameUser" placeholder="Nombre Usuario (ej: user1234)" name="nameUser" id="nameUser" />
+            <p *ngIf="form.controls['nameUser'].touched && form.controls['nameUser'].errors?.['required']" class="error-message"> El campo es obligatorio</p>
+        </div>
+
+        <!-- Nombre Usuario -->
+        <div class="form-group">
+            <input type="text" formControlName="name" placeholder="Nombre Completo" name="name" id="name" />
             <p *ngIf="form.controls['name'].touched && form.controls['name'].errors?.['required']" class="error-message"> El campo es obligatorio</p>
+        </div>
+
+        <!-- Email -->
+        <div class="form-group">
+            <input type="email" formControlName="email" placeholder="Email" name="email" id="email" />
+            <p *ngIf="form.controls['email'].touched && form.controls['email'].errors?.['required']" class="error-message"> El campo es obligatorio</p>
         </div>
 
         <!-- Contraseña -->
@@ -37,7 +49,6 @@
 
         <!-- Botón de registro -->
         <button type="submit" class="register-btn">Registrarse</button>
-
         <p>¿Ya tienes cuenta? <a class="login-a" [routerLink]="['/login']">Inicia sesión</a></p>
     </form>
 </div>

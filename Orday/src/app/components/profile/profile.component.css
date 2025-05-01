@@ -9,7 +9,7 @@ body {
 /* Barra de navegación */
 .navbar {
     background-color: #2c3e50; 
-    padding: 1rem 3rem;
+    padding: 0rem 3rem;
     border-radius: 0.5rem;
     display: flex;
     justify-content: space-between;
@@ -19,9 +19,8 @@ body {
     top: 0;
 }
 
-.navbar h1:hover{
-    color: #7f8c8d; 
-    transform: scale(1.1);
+.navbar img{
+    width: 125px;
     cursor: pointer;
 }
 
@@ -31,25 +30,22 @@ body {
     display: flex;
     gap: 2rem;
 }
-  
+
 .nav-links a {
     text-decoration: none;
     color: white;
     font-weight: 500;
     font-size: 1.1rem;
+    cursor: pointer;
 }
-  
+
 .nav-links a:hover {
-    color: #83b7c1;  
+    color: #ffbd59;  
     transform: scale(1.05); 
 }
 
-.auth-buttons {
-    display: flex;
-    gap: 1rem;
-}
-
-.auth-buttons .back-btn {
+/* Estilo al boton de Cerrar Sesion */
+.back-btn {
     background-color: #83b7c1;  
     border: none;
     padding: 0.8rem 1.5rem;
@@ -59,9 +55,9 @@ body {
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
-  
-.auth-buttons .back-btn:hover {
-    background-color: #7f8c8d;  
+
+.back-btn:hover {
+    background-color: #ffbd59;   
     transform: scale(1.05);  
 }
 
@@ -179,4 +175,36 @@ body {
   
 .edit-btn:hover, .change-password-btn:hover {
     background-color: #7f8c8d;
+}
+
+/* Estilos para la ventana donde cambiamos la contraseña */
+.password-form {
+    background: #7f8c8d85;
+    padding: 2rem;
+    margin: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    text-align: left;
+}
+
+.password-form input {
+    width: 100%;
+    margin: 10px 0;
+    padding: 5px 5px;
+    border-radius: 5px;
+}
+
+.password-form button {
+    padding: 10px 20px;
+    background-color: #83b7c1;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px 5px;
+}
+
+.password-form button:hover {
+    background-color: #ffbd59;
 }

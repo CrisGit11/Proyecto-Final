@@ -1,67 +1,67 @@
 <!-- Barra de navegación -->
-<nav class = "navbar">
-    <div class = "logo">
-        <img src = "assets\imagenes\ordayLogo.png" alt = "Logo_Orday.png" />
+<nav class="navbar">
+    <div>
+        <img src="assets\imagenes\logoOrday.png" alt="Logo_Orday.png" />
     </div>
-    <ul class = "nav-links">
-      <li><a href = "#">Inicio</a></li>
-      <li><a href = "#">Planificador</a></li>
-      <li><a href = "#">Calendario</a></li>
-      <li><a href = "#">Perfil</a></li>
+    <ul class="nav-links">
+      <li><a>Comunidad</a></li>
+      <li><a>Planificador</a></li>
+      <li><a>Recursos</a></li>
+      <li><a>Testimonios</a></li>
     </ul>
-    <div class = "auth-buttons">
-      <button class = "login-btn" (click) = "goTo('/login')">Iniciar sesión</button>
-      <button class = "signup-btn" (click) = "goTo('/register')">Registrarse</button>
+    <div class="auth-buttons">
+      <button class="login-btn" (click)="goTo('/login')">Iniciar sesión</button>
+      <button class="signup-btn" (click)="goTo('/register')">Registrarse</button>
     </div>
 </nav>
   <!-- Contenido principal -->
-  <div class = "container">
+  <div class="container">
     <header>
       <h1>Bienvenido a Orday</h1>
       <p>Tu espacio ideal para planificar la semana de manera eficiente y sencilla.</p>
     </header>
   
-    <section class = "highlight">
+    <section class="highlight">
       <p>Orday es una plataforma diseñada para ayudarte a organizar tus tareas y metas de la semana de forma eficiente. Con una interfaz limpia y funcional, puedes gestionar tus actividades diarias de manera visual y amigable.</p>
     </section>
   
-    <section class = "features">
-      <div class = "feature">
-        <img src = "/assets/imagenes/planificadorTareas.png" alt = "Planificador" />
+    <section class="features">
+      <div class="feature">
+        <img src="/assets/imagenes/planificadorTareas.png" alt="Planificador" />
         <h3>Planificador de Tareas</h3>
         <p>Organiza tus actividades diarias y semanales con un diseño visual que te permite ver tu progreso en tiempo real.</p>
       </div>
-      <div class = "feature">
-        <img src = "assets/imagenes/calendario.png" alt = "Calendario" />
+      <div class="feature">
+        <img src="assets/imagenes/calendario.png" alt="Calendario" />
         <h3>Calendario Interactivo</h3>
         <p>Consulta y gestiona tus eventos en un calendario intuitivo que te ayuda a no perder ninguna cita importante.</p>
       </div>
-      <div class = "feature">
-        <img src = "assets/imagenes/generadorHabitos.png" alt = "Gestión de Hábitos" />
+      <div class="feature">
+        <img src="assets/imagenes/generadorHabitos.png" alt="Gestión de Hábitos" />
         <h3>Gestión de Hábitos</h3>
         <p>Crea y sigue hábitos que mejoren tu productividad y bienestar general. Logra tus objetivos con facilidad.</p>
       </div>
     </section>
 
      <!-- Sección de Testimonios -->
-     <section class = "testimonials">
+     <section class="testimonials">
       <h2>Lo que dicen nuestros usuarios</h2>
-      <div class = "testimonial">
+      <div class="testimonial">
         <p>"Orday ha transformado la manera en que gestiono mi tiempo. Ahora puedo ver todo de manera clara y organizada. ¡Una herramienta imprescindible!"</p>
         <p><strong>- Laura, Profesional independiente</strong></p>
       </div>
-      <div class = "testimonial">
+      <div class="testimonial">
         <p>"Gracias a Orday, pude organizar mis tareas diarias y mejorar mi productividad. ¡Recomiendo esta plataforma a todos!"</p>
         <p><strong>- Miguel, Estudiante universitario</strong></p>
       </div>
     </section>
   
-    <section class = "cta">
+    <section class="cta">
       <h2>Comienza ahora y organiza tu semana con estilo</h2>
       <p>Únete a Orday para empezar a organizar tu semana de manera eficiente y sin estrés.</p>
-      <div class = "cta-buttons">
-        <button class = "login-btn" (click) = "goTo('/login')">Iniciar sesión</button>
-        <button class = "signup-btn" (click) = "goTo('/register')">Registrarse</button>
+      <div class="cta-buttons">
+        <button class="login-btn" (click)="goTo('/login')">Iniciar sesión</button>
+        <button class="signup-btn" (click)="goTo('/register')">Registrarse</button>
       </div>
     </section>
 </div>

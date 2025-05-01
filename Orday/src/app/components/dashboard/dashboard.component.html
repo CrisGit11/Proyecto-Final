@@ -1,15 +1,15 @@
 <!-- Barra de navegación -->
 <nav class="navbar">
-    <div class="logo">
-        <h1>Orday</h1>
+    <div>
+        <img src="assets\imagenes\logoOrday.png" alt="Logo_Orday.png" />
     </div>
     <ul class="nav-links">
         <li><a [routerLink]="['/dashboard']">Inicio</a></li>
         <li><a [routerLink]="['/routine']">Planificador</a></li>
         <li><a >Calendario</a></li>
         <li><a [routerLink]="['/profile']">Perfil</a></li>
-      </ul>
-    <div class="auth-buttons">
+    </ul>
+    <div>
         <button class="back-btn" (click)="goOut('')">Cerrar sesión</button>
     </div>
 </nav>
@@ -19,7 +19,7 @@
     <header>
         <h2>Comienza a Gestionar Tu Semana</h2>
         <p>Tu espacio para gestionar tus rutinas y mantenerte organizado de una forma simple y eficiente. Aquí puedes crear nuevas rutinas, hacer un seguimiento de tu progreso y modificar las existentes cuando lo necesites.</p>
-        <img src="assets\imagenes\ordayLogo.png" alt="Logo_Orday.png" />
+        <img src="assets\imagenes\ordayFondo.png" alt="Logo_Orday.png" />
     </header>
   
     <div class="dashboard-actions">
@@ -35,9 +35,9 @@
         <div class="routine-list">
             <div class="routine-item" *ngFor="let routine of routines; let i=index">
                 <h4 class="routine-name">{{routine.name}}</h4>
-                <p class="routine-details">{{routine.description}}</p>
-                <p class="routine-details"><strong>Duración: {{routine.duration}}</strong></p>
-                <p class="routine-details"><strong>Categoría: {{routine.category}}</strong></p>
+                <p>{{routine.description}}</p>
+                <p><strong>Duración: {{routine.duration}}</strong></p>
+                <p><strong>Categoría: {{routine.category}}</strong></p>
                 <div class="routine-actions">
                     <button class="edit-btn" (click)="updateRoutine(i)">Editar</button>
                     <button class="delete-btn" (click)="deleteRoutine(i)">Eliminar</button>

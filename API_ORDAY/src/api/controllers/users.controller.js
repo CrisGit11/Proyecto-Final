@@ -7,11 +7,11 @@ const Users = require("../models/users.models");
 
 const createUser = async (req, res) => {
     try{
-        let {username, password} = req.body; //Obtenemos los datos que queremos almacenar del body
+        let {username, name, email, password} = req.body; //Obtenemos los datos que queremos almacenar del body
         const userDB = await Users.findOne({username}); //Comprobamos si el usuario ha sido creado anteriormente
         if(!userDB){
             password = bcrypt.hashSync(password, 10); //Encriptamos la contraseña
-            const newUser = new Users({username, password}); //Convertimos dichos datos en un documento de mongo
+            const newUser = new Users({username, name, email, password}); //Convertimos dichos datos en un documento de mongo
             const createdUser = await newUser.save(); //Guardamos los datos en nuestra bbdd
 
             //Definimos la respuesta que queremos que vea el usuario
