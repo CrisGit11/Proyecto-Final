@@ -1,10 +1,10 @@
-Proyecto Orday
+**Proyecto Orday**
 
 Esta aplicación web permite a los usuarios generar rutinas personalizadas de aprendizaje a partir de sus intereses y disponibilidad. El usuario podrá visualizar su rutina semanal y modificarla, tal y como lo desee en ese mismo momento.
 
 A continuación, se detallará en profundidad las partes de nuestra aplicación web:
 
-Backend - Rutas de Autenticación:
+**Backend - Rutas de Autenticación:**
 
 **POST /api/users/register**
 
@@ -260,4 +260,91 @@ Response:
   "message": "Rutina eliminada con éxito"
 }
 ```
+
+**Frontend - Parte visual (Angular):**
+
+**Pantalla Home**
+
+En prime lugar, partimos desde la pantalla home, donde nos muestra una descripción de para qué sirve la página web y que objetivos podemos conseguir con ella.
+
+Si quieres crear una rutina diaria y personalizada, tenemos dos opciones: iniciar sesión o registrarte en la página.
+
+Para poder realizar cualquier acción de estas, tenemos dos botones mediante los cuales, al pulsarlos, nos llevarán automaticamente a la ruta esperada.
+
+![alt text](image.png)
+
+**Pantalla Login**
+
+Tras haber presionado el botón de iniciar sesión, automaticamente aparecerá la pantalla en la cual el usuario podrá introducir sus datos personales para acceder a la página web.
+
+Tendremos dos input donde el usuario deberá introducir su nombre de usuario y su contraseña, pero en el caso de iniciar sesión sin rellenar estos datos, la página te mostrará de que son campos obligatorios.
+
+![alt text](image-1.png)
+
+En el caso de haber llegado hasta esta pantalla, pero el usuario no se ha registrado antes en Orday, tiene la opción de poder registrarse.
+
+**Pantalla Register**
+
+Esta pantalla es similar a la del login, pero en esta, el usuario deberá de presentar más información para que pueda quedar guardada en la bbdd de orday y así en un futuro poder iniciar sesión sin necesidad de volverse a registrar.
+
+En el mismo caso, si intentamos registrarnos sin datos rellenos, la página nos indicara la obligatoriedad de los mismos.
+
+![alt text](image-2.png)
+
+**Pantalla Dashboard**
+
+**¡Importante!** Para acceder al resto de pantallas que indique a continuación, previamente el usuario ha tenido que registrarse o logearse, creandose así un token que es el encargado de dar paso a las siguientes pantallas.
+
+La pantalla dashboard es como un home que encontraremos una vez dentro de Orday. En ella, podemos crear las rutinas que deseemos o revisar nuestro perfil.
+
+![alt text](image-3.png)
+
+En el caso de querer visitar nuestro perfil, presionamos en la barra de navegación, donde pone Perfil.
+Pero si en vez de eso, queremos crear una rutina, presionaremos el botón de crear rutina.
+
+
+**Pantalla Profile**
+
+![alt text](image-4.png)
+
+En esta pantalla visualizaremos los datos de la persona que se ha logeado o registrado a Orday, pudiendo así cambiar su contraseña o editar el perfil.
+
+En el caso de querer cambiar la contraseña, pulsamos el botón y nos aparecerá una pantalla emergente donde le indicaremos la nueva contraseña.
+
+![alt text](image-5.png)
+
+**Pantalla Routine**
+
+Para acceder a la creación de la rutina, lo podemos hacer bien desde la pantalla dashboard, presionando el botón, o bien desde la opción "planificador" de la barra de navegación.
+
+Aquí indicaremos los datos necesarios para poder crear una rutia, como por ejemplo, un titulo con una descripcion y duración.
+
+![alt text](image-6.png)
+
+Como por ejemplo:
+
+![alt text](image-7.png)
+
+Y automáticamente al darle guardar, nos aparecerá la rutina creada en nuestra pantalla dashboard.
+
+**Pantalla Dashboard con rutina creada**
+
+![alt text](image-8.png)
+
+Una vez creada la rutina, tenemos la opción de poder editarla o directamente eliminarla.
+
+Si lo que queremos es editar la rutina, nos aparecerán pantallas emergentes donde nos solicitarán la nueva información. Y una vez realizado, nos aparecerá la rutina con los datos actuaizados.
+
+![alt text](image-9.png)
+![alt text](image-10.png)
+
+En el caso de querer eliminar la rutina, nos aparecerá una ventana donde tendremos que confirmar o cancelar la acción a realizar. Y según lo que elijamos, desaparecerá la rutina de nuestra pantalla o no.
+
+![alt text](image-11.png)
+
+**Tecnologías utilizadas:**
+
+Para la parde del backend, he utilizado Node.js + Express para la autenticación de los usuarios y poder realizar la conexión con la base de datos de MongoDB.
+
+Y para la parte de frontend, he utilizado Angular, HTML, CSS y JavaScript para las distintas partes del proyecto.
 
