@@ -271,7 +271,7 @@ Si quieres crear una rutina diaria y personalizada, tenemos dos opciones: inicia
 
 Para poder realizar cualquier acción de estas, tenemos dos botones mediante los cuales, al pulsarlos, nos llevarán automáticamente a la ruta esperada.
 
-![alt text](image.png)
+![alt text](capturasOrday\image.png)
 
 **Pantalla Login**
 
