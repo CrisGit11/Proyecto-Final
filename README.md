@@ -2,7 +2,7 @@
 
 Esta aplicación web permite a los usuarios generar rutinas personalizadas de aprendizaje a partir de sus intereses y disponibilidad. El usuario podrá visualizar su rutina semanal y modificarla, tal y como lo desee en ese mismo momento.
 
-A continuación, se detallará en profundidad las partes de nuestra aplicación web:
+A continuación, se detallará en profundidad las partes de mi aplicación web:
 
 **Backend - Rutas de Autenticación:**
 
@@ -120,7 +120,7 @@ Response:
 }
 ```
 
-Rutas para la Creación de Rutinas:
+**Rutas para la Creación de Rutinas:**
 
 **GET /api/routine**
 
@@ -154,7 +154,7 @@ Response:
 }
 ```
 
-En el caso de que la tabla events este vacía, devolverá el siguiente mensaje:
+En el caso de que la tabla routine este vacía, devolverá el siguiente mensaje:
 
 Response:
 
@@ -201,7 +201,7 @@ Response:
 }
 ```
 
-En el caso de querer crear un evento ya existente en la bbdd, nos devolverá:
+En el caso de querer crear una rutina ya existente en la bbdd, nos devolverá:
 
 Response:
 
@@ -213,7 +213,7 @@ Response:
 
 **PUT /api/events/:eventId**
 
-Permite actualizar un evento existente. 
+Permite actualizar una rutina existente. 
 
 Ruta: http://localhost:4200/api/routine/68110a8df815abe9fdf653dd
 
@@ -265,19 +265,19 @@ Response:
 
 **Pantalla Home**
 
-En prime lugar, partimos desde la pantalla home, donde nos muestra una descripción de para qué sirve la página web y que objetivos podemos conseguir con ella.
+En prime lugar, partimos desde la pantalla home, donde nos muestra una descripción de para qué sirve la página web y qué objetivos podemos conseguir con ella.
 
 Si quieres crear una rutina diaria y personalizada, tenemos dos opciones: iniciar sesión o registrarte en la página.
 
-Para poder realizar cualquier acción de estas, tenemos dos botones mediante los cuales, al pulsarlos, nos llevarán automaticamente a la ruta esperada.
+Para poder realizar cualquier acción de estas, tenemos dos botones mediante los cuales, al pulsarlos, nos llevarán automáticamente a la ruta esperada.
 
 ![alt text](image.png)
 
 **Pantalla Login**
 
-Tras haber presionado el botón de iniciar sesión, automaticamente aparecerá la pantalla en la cual el usuario podrá introducir sus datos personales para acceder a la página web.
+Tras haber presionado el botón de iniciar sesión, automáticamente aparecerá la pantalla en la cual el usuario podrá introducir sus datos personales para acceder a la página web.
 
-Tendremos dos input donde el usuario deberá introducir su nombre de usuario y su contraseña, pero en el caso de iniciar sesión sin rellenar estos datos, la página te mostrará de que son campos obligatorios.
+Tendremos dos input donde el usuario deberá introducir su nombre de usuario y su contraseña, pero en el caso de iniciar sesión sin rellenar estos datos, la página te mostrará que son campos obligatorios.
 
 ![alt text](image-1.png)
 
@@ -287,21 +287,19 @@ En el caso de haber llegado hasta esta pantalla, pero el usuario no se ha regist
 
 Esta pantalla es similar a la del login, pero en esta, el usuario deberá de presentar más información para que pueda quedar guardada en la bbdd de orday y así en un futuro poder iniciar sesión sin necesidad de volverse a registrar.
 
-En el mismo caso, si intentamos registrarnos sin datos rellenos, la página nos indicara la obligatoriedad de los mismos.
+En el mismo caso, si intentamos registrarnos sin datos rellenos, la página nos indicará la obligatoriedad de los mismos.
 
 ![alt text](image-2.png)
 
 **Pantalla Dashboard**
 
-**¡Importante!** Para acceder al resto de pantallas que indique a continuación, previamente el usuario ha tenido que registrarse o logearse, creandose así un token que es el encargado de dar paso a las siguientes pantallas.
+**¡Importante!** Para acceder al resto de pantallas que indique a continuación, previamente el usuario ha tenido que registrarse o logearse, creandose así un token/guarda que es el encargado de dar paso a las siguientes pantallas.
 
 La pantalla dashboard es como un home que encontraremos una vez dentro de Orday. En ella, podemos crear las rutinas que deseemos o revisar nuestro perfil.
 
 ![alt text](image-3.png)
 
-En el caso de querer visitar nuestro perfil, presionamos en la barra de navegación, donde pone Perfil.
-Pero si en vez de eso, queremos crear una rutina, presionaremos el botón de crear rutina.
-
+En el caso de querer visitar nuestro perfil, presionamos en la barra de navegación, donde pone Perfil. Pero si en vez de eso, queremos crear una rutina, presionaremos el botón de crear rutina.
 
 **Pantalla Profile**
 
@@ -315,9 +313,9 @@ En el caso de querer cambiar la contraseña, pulsamos el botón y nos aparecerá
 
 **Pantalla Routine**
 
-Para acceder a la creación de la rutina, lo podemos hacer bien desde la pantalla dashboard, presionando el botón, o bien desde la opción "planificador" de la barra de navegación.
+Para acceder a la creación de la rutina, lo podemos hacer o bien desde la pantalla dashboard, presionando el botón, o bien desde la opción "planificador" de la barra de navegación.
 
-Aquí indicaremos los datos necesarios para poder crear una rutia, como por ejemplo, un titulo con una descripcion y duración.
+Aquí indicaremos los datos necesarios para poder crear una rutina, como por ejemplo, un título con una descripción y duración.
 
 ![alt text](image-6.png)
 
@@ -333,7 +331,7 @@ Y automáticamente al darle guardar, nos aparecerá la rutina creada en nuestra 
 
 Una vez creada la rutina, tenemos la opción de poder editarla o directamente eliminarla.
 
-Si lo que queremos es editar la rutina, nos aparecerán pantallas emergentes donde nos solicitarán la nueva información. Y una vez realizado, nos aparecerá la rutina con los datos actuaizados.
+Si lo que queremos es editarla, nos aparecerán pantallas emergentes donde nos solicitarán la nueva información. Y una vez realizado el proceso, nos aparecerá la rutina con los datos actualizados.
 
 ![alt text](image-9.png)
 ![alt text](image-10.png)
