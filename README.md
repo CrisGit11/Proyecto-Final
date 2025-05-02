@@ -271,7 +271,7 @@ Si quieres crear una rutina diaria y personalizada, tenemos dos opciones: inicia
 
 Para poder realizar cualquier acción de estas, tenemos dos botones mediante los cuales, al pulsarlos, nos llevarán automáticamente a la ruta esperada.
 
-![alt text](image.png)
+![screen_home.png](capturasOrday/image.png)
 
 **Pantalla Login**
 
@@ -279,7 +279,7 @@ Tras haber presionado el botón de iniciar sesión, automáticamente aparecerá 
 
 Tendremos dos input donde el usuario deberá introducir su nombre de usuario y su contraseña, pero en el caso de iniciar sesión sin rellenar estos datos, la página te mostrará que son campos obligatorios.
 
-![alt text](image-1.png)
+![screen_login.png](capturasOrday/image-1.png)
 
 En el caso de haber llegado hasta esta pantalla, pero el usuario no se ha registrado antes en Orday, tiene la opción de poder registrarse.
 
@@ -289,7 +289,7 @@ Esta pantalla es similar a la del login, pero en esta, el usuario deberá de pre
 
 En el mismo caso, si intentamos registrarnos sin datos rellenos, la página nos indicará la obligatoriedad de los mismos.
 
-![alt text](image-2.png)
+![screen_register.png](capturasOrday/image-2.png)
 
 **Pantalla Dashboard**
 
@@ -297,19 +297,19 @@ En el mismo caso, si intentamos registrarnos sin datos rellenos, la página nos 
 
 La pantalla dashboard es como un home que encontraremos una vez dentro de Orday. En ella, podemos crear las rutinas que deseemos o revisar nuestro perfil.
 
-![alt text](image-3.png)
+![screen_dashboard.png](capturasOrday/image-3.png)
 
 En el caso de querer visitar nuestro perfil, presionamos en la barra de navegación, donde pone Perfil. Pero si en vez de eso, queremos crear una rutina, presionaremos el botón de crear rutina.
 
 **Pantalla Profile**
 
-![alt text](image-4.png)
+![screen_profile.png](capturasOrday/image-4.png)
 
 En esta pantalla visualizaremos los datos de la persona que se ha logeado o registrado a Orday, pudiendo así cambiar su contraseña o editar el perfil.
 
 En el caso de querer cambiar la contraseña, pulsamos el botón y nos aparecerá una pantalla emergente donde le indicaremos la nueva contraseña.
 
-![alt text](image-5.png)
+![screen_profile2.png](capturasOrday/image-5.png)
 
 **Pantalla Routine**
 
@@ -317,28 +317,28 @@ Para acceder a la creación de la rutina, lo podemos hacer o bien desde la panta
 
 Aquí indicaremos los datos necesarios para poder crear una rutina, como por ejemplo, un título con una descripción y duración.
 
-![alt text](image-6.png)
+![screen_routine.png](capturasOrday/image-6.png)
 
 Como por ejemplo:
 
-![alt text](image-7.png)
+![screen_routine2.png](capturasOrday/image-7.png)
 
 Y automáticamente al darle guardar, nos aparecerá la rutina creada en nuestra pantalla dashboard.
 
 **Pantalla Dashboard con rutina creada**
 
-![alt text](image-8.png)
+![screen_dashboard2.png](capturasOrday/image-8.png)
 
 Una vez creada la rutina, tenemos la opción de poder editarla o directamente eliminarla.
 
 Si lo que queremos es editarla, nos aparecerán pantallas emergentes donde nos solicitarán la nueva información. Y una vez realizado el proceso, nos aparecerá la rutina con los datos actualizados.
 
-![alt text](image-9.png)
-![alt text](image-10.png)
+![screen_dashboard3.png](capturasOrday/image-9.png)
+![screen_dashboard4.png](capturasOrday/image-10.png)
 
 En el caso de querer eliminar la rutina, nos aparecerá una ventana donde tendremos que confirmar o cancelar la acción a realizar. Y según lo que elijamos, desaparecerá la rutina de nuestra pantalla o no.
 
-![alt text](image-11.png)
+![screen_dashboard5.png](capturasOrday/image-11.png)
 
 **Tecnologías utilizadas:**
 
