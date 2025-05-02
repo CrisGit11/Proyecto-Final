@@ -117,3 +117,66 @@ input {
 .register-btn:hover {
     background-color: #7f8c8d;
 }
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+    /* Barra de navegación */
+    .navbar {
+        padding: 1rem;
+    }
+    .nav-links {
+        flex-direction: column;
+        gap: 1rem;
+        margin-top: 1rem;
+        font-size: 14px;
+    }
+    /* Contenido principal */
+    .container {
+        padding: 2rem;
+        margin: 2rem auto;
+        max-width: 350px;
+    }
+    .container h1 {
+        font-size: 1.8rem;
+    }
+    .container p {
+        font-size: 1rem;
+    }
+    .register-form {
+        padding: 1rem;
+    }
+    .register-btn {
+        padding: 0.8rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    /* Barra de navegación */
+    .navbar {
+        padding: 1rem;
+    }
+    .navbar img {
+        width: 80px;
+        height: 80px;
+    }
+    /* Contenido principal */
+    .container {
+        padding: 1.5rem;
+        margin: 1.5rem auto;
+        max-width: 90%;
+    }
+    .container h1 {
+        font-size: 1.6rem;
+    }
+    .container p {
+        font-size: 0.9rem;
+    }
+    /* Ajustes en el formulario de registro */
+    .register-form {
+        padding: 0.8rem;
+    }
+    .register-btn {
+        padding: 0.8rem;
+        font-size: 0.9rem;
+    }
+}

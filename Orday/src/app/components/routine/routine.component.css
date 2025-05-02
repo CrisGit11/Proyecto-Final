@@ -157,3 +157,58 @@ body {
 .cancel-btn:hover {
   background-color: red;
 }
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  /* Barra de navegación */
+  .navbar {
+    padding: 1rem;
+  }
+  .nav-links {
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+    font-size: 14px;
+  }
+  .create-routine {
+    padding: 2rem;
+    margin: 2rem 1rem;
+    max-width: 100%;
+  }
+  .submit-btn-container {
+    text-align: center;
+  }
+  .submit-btn,
+  .cancel-btn {
+    width: 100%;
+    margin: 0.5rem 0;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  /* Barra de navegación */
+  .navbar {
+    padding: 1rem;
+  }
+  .navbar img {
+    width: 80px;
+    height: 80px;
+  } 
+  .create-routine header h2 {
+    font-size: 1.5rem;
+  }
+  .create-routine header p {
+    font-size: 1rem;
+  }
+  .routine-form input,
+  .routine-form textarea,
+  .routine-form select {
+    font-size: 0.95rem;
+    padding: 0.6rem;
+  }
+  .submit-btn,
+  .cancel-btn {
+    font-size: 0.95rem;
+    padding: 0.6rem 1.2rem;
+  }
+}

@@ -3,7 +3,7 @@ import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 import { AuthTokenService } from '../../services/auth-token/auth-token.service';
-import { User, UserService } from '../../services/register/user.service';
+import { User, UserService } from '../../services/users/user.service';
 
 @Component({
   selector: 'app-login',
@@ -15,6 +15,7 @@ import { User, UserService } from '../../services/register/user.service';
 export class LoginComponent {
 
   private authTokenService = inject(AuthTokenService);
+  private userService = inject(UserService);
 
   constructor(private router: Router) {}
 
@@ -30,9 +31,15 @@ export class LoginComponent {
   public login(): void{
     this.form.markAllAsTouched();
     if(this.form.valid){
-      sessionStorage.setItem('nameUser', String(this.form.controls['nameUser'].value));
-      this.authTokenService.setToken('djkfhadfalk1243kndklfhnkaf');
-      this.router.navigate(['/dashboard']);
+      const { nameUser, password } = this.form.value;
+      const user = this.userService.authenticate(nameUser!, password!);
+      if(user){
+        this.authTokenService.setToken('djkfhadfalk1243kndklfhnkaf');
+        this.userService.setProfile(user);
+        this.router.navigate(['/dashboard']);
+      }else{
+        alert('Credenciales inválidas');
+      }
     }
   }
 

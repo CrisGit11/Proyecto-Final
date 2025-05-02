@@ -208,7 +208,7 @@ header p {
     transition: background-color 0.3s ease;
 }
   
-.cta-buttons:hover {
+.cta-buttons button:hover {
     background-color: #586f89;
     transform: scale(1.05);
 }
@@ -219,29 +219,24 @@ header p {
     .navbar {
         padding: 0rem 1rem;
     }
-
     .nav-links {
         flex-direction: column;
         gap: 1.5rem;
         margin-top: 1rem;
         font-size: 12px;
     }
-
     .auth-buttons {
         margin-top: 1rem;
         flex-direction: column;
     }
-
     .feature {
         width: 100%;
         margin-bottom: 1.5rem;
     }
-
     .features {
         flex-direction: column;
         gap: 1.5rem;
     }
-
     .cta-buttons {
         flex-direction: column;
         gap: 1.5rem;
@@ -253,41 +248,32 @@ header p {
     .navbar {
         padding: 0rem 1rem;
     }
-
-    .logo img {
+    .navbar img {
         width: 80px;
         height: 80px;
     }
-
     /* Contenido principal */
     .container {
         padding: 2rem;
     }
-
     header h1 {
         font-size: 2rem;
     }
-
     header p {
         font-size: 1rem;
     }
-
     .highlight {
         font-size: 1rem;
     }
-
     .feature h3 {
         font-size: 1.2rem;
     }
-
     .feature p {
         font-size: 0.9rem;
     }
-
     .cta h2 {
         font-size: 1.5rem;
     }
-
     .cta p {
         font-size: 1rem;
     }

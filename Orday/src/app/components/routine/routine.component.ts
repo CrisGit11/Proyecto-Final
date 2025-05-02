@@ -27,6 +27,7 @@ export class RoutineComponent {
   public goTo(ruta: string): void {
     let cerrarSesion = confirm('¿Está seguro de que quiere cerrar sesión?');
     if(cerrarSesion){
+      sessionStorage.clear();
       this.router.navigate([ruta]);
     };
   };

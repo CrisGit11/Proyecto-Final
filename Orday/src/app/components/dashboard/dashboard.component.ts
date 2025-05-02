@@ -19,18 +19,19 @@ export class DashboardComponent implements OnInit{
 
   public ngOnInit(): void {
     this.routines = this.routineService.getRoutines();
-  }
+  };
 
   public goOut(ruta: string): void {
     let cerrarSesion = confirm('¿Está seguro de que quiere cerrar sesión?')
     if(cerrarSesion){
+      sessionStorage.clear();
       this.router.navigate([ruta]);
-    }
-  }
+    };
+  };
 
   public goTo(ruta: string): void {
     this.router.navigate([ruta]);
-  }
+  };
 
   public updateRoutine(index: number): void {
     const routine = this.routines[index];
@@ -51,16 +52,16 @@ export class DashboardComponent implements OnInit{
   
       this.routineService.updateRoutine(index, updatedRoutine);
       this.routines = this.routineService.getRoutines(); 
-    }
-  }
+    };
+  };
 
   public deleteRoutine(index: number): void{
     const confirmDelete = confirm(`¿Seguro que quieres eliminar la rutina "${this.routines[index].name}"?`);
     if(confirmDelete){
       this.routineService.deleteRoutine(index);
-      this.routines = this.routineService.getRoutines(); // Actualizar la lista
-    }
-    
-  }
+      this.routines = this.routineService.getRoutines(); 
+      sessionStorage.clear();
+    };
+  };
 
 }
