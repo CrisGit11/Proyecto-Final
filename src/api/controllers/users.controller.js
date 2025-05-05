@@ -47,7 +47,8 @@ const loginUser = async (req, res) => {
                 return res.status(400).json({success: false, message: "Contraseña incorrecta"});
             };
             const token = createToken(userDB);
-            res.status(200).json({success: true, token: token});
+            const { _id, username, name, email } = userDB;
+            res.status(200).json({success: true, token, user: { _id, username, name, email }});
         };
     }catch(error){
         res.status(500).json({message: error});

@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { RoutineService, Routine } from './../../services/routine/routine.service';
 import { Component, inject, OnInit } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
+import { HttpHeaders } from '@angular/common/http';
 
 @Component({
   selector: 'app-dashboard',
@@ -12,19 +13,28 @@ import { Router, RouterLink } from '@angular/router';
 export class DashboardComponent implements OnInit{
 
   private routineService = inject(RoutineService);
-
   public routines: Routine[] = [];
 
   constructor(private router: Router) {}
 
   public ngOnInit(): void {
-    this.routines = this.routineService.getRoutines();
+    this.loadRoutines();
+  };
+
+  public loadRoutines(): void {
+    this.routineService.getRoutines().subscribe({
+      next: (response) => {
+        this.routines = response.routines;
+      },
+      error: (error) => {
+        alert('Hubo un error al cargar las rutinas');
+      }
+    });
   };
 
   public goOut(ruta: string): void {
     let cerrarSesion = confirm('¿Está seguro de que quiere cerrar sesión?')
     if(cerrarSesion){
-      sessionStorage.clear();
       this.router.navigate([ruta]);
     };
   };
@@ -33,34 +43,50 @@ export class DashboardComponent implements OnInit{
     this.router.navigate([ruta]);
   };
 
-  public updateRoutine(index: number): void {
-    const routine = this.routines[index];
+  public updateRoutine(routineId: string): void {
+    const newName = prompt('Nuevo nombre de rutina:');
+    const newDescription = prompt('Nueva descripción:');
+    const newDuration = prompt('Nueva duración:');
+    const newCategory = prompt('Nueva categoría:');
   
-    const newName = prompt('Nuevo nombre de rutina:', routine.name);
-    const newDescription = prompt('Nueva descripción:', routine.description);
-    const newDuration = prompt('Nueva duración:', routine.duration);
-    const newCategory = prompt('Nueva categoría:', routine.category);
+    const currentRoutine = this.routines.find(routine => routine._id === routineId);
   
-    if(newName && newDescription && newDuration && newCategory){
-      const updatedRoutine: Routine = {
-        ...routine,
-        name: newName,
-        description: newDescription,
-        duration: newDuration,
-        category: newCategory
+    if(currentRoutine){
+      const updatedRoutine = {
+        name: newName || currentRoutine.name,          
+        description: newDescription || currentRoutine.description,  
+        duration: newDuration || currentRoutine.duration,  
+        category: newCategory || currentRoutine.category 
       };
   
-      this.routineService.updateRoutine(index, updatedRoutine);
-      this.routines = this.routineService.getRoutines(); 
+      this.routineService.updateRoutine(routineId, updatedRoutine).subscribe({
+        next: () => {
+          alert('Rutina actualizada');
+          this.loadRoutines();
+        },
+        error: (error) => {
+          console.error(error);
+          alert('Error al actualizar la rutina');
+        }
+      });
+    }else{
+      alert('Rutina no encontrada');
     };
   };
 
-  public deleteRoutine(index: number): void{
-    const confirmDelete = confirm(`¿Seguro que quieres eliminar la rutina "${this.routines[index].name}"?`);
+  public deleteRoutine(routineId: string): void {
+    const confirmDelete = confirm('¿Seguro que quieres eliminar esta rutina?');
     if(confirmDelete){
-      this.routineService.deleteRoutine(index);
-      this.routines = this.routineService.getRoutines(); 
-      sessionStorage.clear();
+      this.routineService.deleteRoutine(routineId).subscribe({
+        next: () => {
+          alert('Rutina eliminada');
+          this.loadRoutines();
+        },
+        error: (error) => {
+          console.error(error);
+          alert('Error al eliminar la rutina');
+        }
+      });
     };
   };
 

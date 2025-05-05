@@ -1,7 +1,7 @@
 import { RoutineService } from './../../services/routine/routine.service';
 import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
-import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 
 @Component({
@@ -32,24 +32,26 @@ export class RoutineComponent {
     };
   };
 
-  public saveRoutine(): void{
+  public saveRoutine(): void {
     this.form.markAllAsTouched();
     if(this.form.valid){
-      const newRoutine = this.routineService.generateRoutine(this.form.value.name!, this.form.value.description!, this.form.value.duration!, this.form.value.category!);
-      if(newRoutine){
-        this.router.navigate(['/dashboard']);
-      };
+      const { name, description, duration, category } = this.form.value;
+      this.routineService.createRoutine(name!, description!, duration!, category!).subscribe({
+        next: (response) => {
+          alert('Rutina creada exitosamente');
+          this.router.navigate(['/dashboard']); 
+        },
+        error: (error) => {
+          alert('Hubo un error al crear la rutina');
+        }
+      });
     };
   };
 
   public cancelRoutine(): void {
-    this.form.markAllAsTouched();
     const cancelRoutine = confirm('¿Está seguro de que quiere cancelar?');
     if(cancelRoutine){
-      this.form.controls['name'].setValue('');
-      this.form.controls['description'].setValue('');
-      this.form.controls['duration'].setValue('');
-      this.form.controls['category'].setValue('');
+      this.form.reset();
     };
   };
 

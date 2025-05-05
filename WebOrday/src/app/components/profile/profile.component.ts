@@ -15,7 +15,7 @@ export class ProfileComponent implements OnInit{
   private userService = inject(UserService);
 
   name: string = '';
-  nameUser: string = '';
+  username: string = '';
   email: string = '';
   password: string = '';
 
@@ -28,10 +28,11 @@ export class ProfileComponent implements OnInit{
     const user = this.userService.getCurrentUser();
     if(user){
       this.name = user.name;
-      this.nameUser = user.nameUser;
+      this.username = user.username;
       this.email = user.email;
       this.password = user.password;
     };
+    console.log(user)
   };
 
   public goTo(ruta: string): void {

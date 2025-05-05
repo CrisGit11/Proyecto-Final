@@ -20,7 +20,7 @@ export class LoginComponent {
   constructor(private router: Router) {}
 
   public form = new FormGroup({
-    nameUser: new FormControl('', [Validators.required]),
+    username: new FormControl('', [Validators.required]),
     password: new FormControl('', [Validators.required]),
   })
 
@@ -28,19 +28,23 @@ export class LoginComponent {
     this.router.navigate([ruta]);
   }
 
-  public login(): void{
+  public login(): void {
     this.form.markAllAsTouched();
     if(this.form.valid){
-      const { nameUser, password } = this.form.value;
-      const user = this.userService.authenticate(nameUser!, password!);
-      if(user){
-        this.authTokenService.setToken('djkfhadfalk1243kndklfhnkaf');
-        this.userService.setProfile(user);
-        this.router.navigate(['/dashboard']);
-      }else{
-        alert('Credenciales inválidas');
-      }
-    }
-  }
+      const { username, password } = this.form.value;
+      this.userService.authenticate(username!, password!).subscribe({
+        next: (user) => {
+          this.authTokenService.setToken(sessionStorage.getItem('token')!);
+          this.userService.setProfile(user);
+          this.router.navigate(['/dashboard']);
+        },
+        error: (err) => {
+          alert('Credenciales inválidas');
+          console.error(err);
+        }
+      });
+    };
+  };
+  
 
 }

@@ -33,14 +33,14 @@
     
         <!-- Lista de rutinas -->
         <div class="routine-list">
-            <div class="routine-item" *ngFor="let routine of routines; let i=index">
+            <div class="routine-item" *ngFor="let routine of routines">
                 <h4 class="routine-name">{{routine.name}}</h4>
                 <p>{{routine.description}}</p>
                 <p><strong>Duración: {{routine.duration}}</strong></p>
                 <p><strong>Categoría: {{routine.category}}</strong></p>
                 <div class="routine-actions">
-                    <button class="edit-btn" (click)="updateRoutine(i)">Editar</button>
-                    <button class="delete-btn" (click)="deleteRoutine(i)">Eliminar</button>
+                    <button class="edit-btn" (click)="updateRoutine(routine._id)">Editar</button>
+                    <button class="delete-btn" (click)="deleteRoutine(routine._id)">Eliminar</button>
                 </div>   
             </div>
         </div>

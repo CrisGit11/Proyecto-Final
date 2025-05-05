@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
-import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 import { AuthTokenService } from '../../services/auth-token/auth-token.service';
 import { UserService } from '../../services/users/user.service';
@@ -19,7 +19,7 @@ export class RegisterComponent {
   constructor(private router: Router) {}
 
   public form = new FormGroup({
-    nameUser: new FormControl('', [Validators.required]),
+    username: new FormControl('', [Validators.required]),
     name: new FormControl('', [Validators.required]),
     email: new FormControl('', [Validators.required]),
     password1: new FormControl('', [Validators.required]),
@@ -33,14 +33,25 @@ export class RegisterComponent {
   public register(): void {
     this.form.markAllAsTouched();
     if(this.form.valid){
-      if(this.form.controls['password1'].value !== this.form.controls['password2'].value){
+      const { username, name, email, password1, password2 } = this.form.value;
+      if(password1 !== password2){
         alert('Las contraseñas no coinciden');
-      }else{
-        this.authTokenService.setToken('djkfhadfalk1243kndklfhnkaf');
-        const newUser = this.userService.createdUser(this.form.value.nameUser!, this.form.value.name!, this.form.value.email!, this.form.value.password1!);
-        this.userService.setProfile(newUser);
-        this.router.navigate(['/dashboard']);
-      };  
+        return;
+      }
+      this.userService.createUser(username!, name!, email!, password1!).subscribe({
+        next: (user) => {
+          this.userService.setProfile(user);
+          const token = sessionStorage.getItem('token');
+          if(token){
+            this.authTokenService.setToken(token);
+          };
+          this.router.navigate(['/dashboard']);
+        },
+        error: (error) => {
+          console.error(error);
+          alert(error.error?.message || 'Error al registrar usuario');
+        }
+      });
     };
   };
   
