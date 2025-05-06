@@ -27,7 +27,7 @@ export class DashboardComponent implements OnInit{
         this.routines = response.routines;
       },
       error: (error) => {
-        alert('Hubo un error al cargar las rutinas');
+        console.log('Hubo un error al cargar las rutinas ya que no hay rutinas disponibles en la bbdd');
       }
     });
   };

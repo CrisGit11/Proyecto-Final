@@ -29,7 +29,7 @@ export class UserService {
   };
 
   public authenticate(username: string, password: string): Observable<User> {
-    return this.httpClient.post<{ user: User, token: string }>(`${this.API_URL}/login`, {
+    return this.httpClient.post<{ success: boolean, user: User, token: string }>(`${this.API_URL}/login`, {
       username,
       password
     }).pipe(
@@ -54,13 +54,7 @@ export class UserService {
   public getCurrentUser(): User | null {
     return this.currentUser;
   };
-
-  public updatePassword(newPassword: string): void {
-    if(this.currentUser){
-      this.currentUser.password = newPassword;
-      this.setProfile(this.currentUser);
-    };
-  };
+  
 }
 
 export type User = {

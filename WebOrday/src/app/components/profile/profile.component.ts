@@ -19,9 +19,6 @@ export class ProfileComponent implements OnInit{
   email: string = '';
   password: string = '';
 
-  newPassword: string = '';  
-  isPasswordFormVisible = false; 
-
   constructor(private router: Router) {}
 
   ngOnInit(): void {
@@ -32,7 +29,6 @@ export class ProfileComponent implements OnInit{
       this.email = user.email;
       this.password = user.password;
     };
-    console.log(user)
   };
 
   public goTo(ruta: string): void {
@@ -41,28 +37,6 @@ export class ProfileComponent implements OnInit{
       sessionStorage.clear();
       this.router.navigate([ruta]);
     };
-  };
-
-  // Cambia la contraseña y la guarda en sessionStorage
-  public changePassword(): void {
-    if(this.newPassword){
-      this.userService.updatePassword(this.newPassword);
-      this.password = this.newPassword; // Para que el cambio se vea en el perfil
-      alert('Contraseña cambiada correctamente');
-      this.isPasswordFormVisible = false;
-    }else{
-      alert('Por favor, ingrese una contraseña válida');
-    };
-  };
-
-  // Cancela el cambio de contraseña
-  public cancelChange(): void {
-    this.isPasswordFormVisible = false; // Cierra el formulario sin guardar
-  };
-
-  // Mostrar el formulario de cambio de contraseña
-  public showPasswordForm(): void {
-    this.isPasswordFormVisible = true;
   };
    
 }

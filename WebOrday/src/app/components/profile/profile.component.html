@@ -50,17 +50,7 @@
     
     <div class = "profile-actions">
         <button class = "edit-btn">Editar perfil</button>
-        <button class = "change-password-btn" (click)="showPasswordForm()">Cambiar contraseña</button>
+        <button class = "change-password-btn">Cambiar contraseña</button>
     </div>
 
-    <!-- Formulario para cambiar la contraseña -->
-    <div *ngIf="isPasswordFormVisible" class="password-form">
-        <h3>Cambiar Contraseña</h3>
-        <form (ngSubmit)="changePassword()">
-        <label for="newPassword">Nueva Contraseña:</label>
-        <input type="password" id="newPassword" [(ngModel)]="newPassword" name="newPassword" placeholder="Introduce tu nueva contraseña" required />
-        <button type="submit">Guardar</button>
-        <button type="button" (click)="cancelChange()">Cancelar</button>
-        </form>
-    </div>
 </div>
