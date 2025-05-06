@@ -305,11 +305,7 @@ En el caso de querer visitar nuestro perfil, presionamos en la barra de navegaci
 
 ![screen_profile.png](capturasOrday/image-4.png)
 
-En esta pantalla visualizaremos los datos de la persona que se ha logeado o registrado a Orday, pudiendo así cambiar su contraseña o editar el perfil.
-
-En el caso de querer cambiar la contraseña, pulsamos el botón y nos aparecerá una pantalla emergente donde le indicaremos la nueva contraseña.
-
-![screen_profile2.png](capturasOrday/image-5.png)
+En esta pantalla visualizaremos los datos de la persona que se ha logeado o registrado a Orday.
 
 **Pantalla Routine**
 
